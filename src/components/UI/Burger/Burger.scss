@@ -1,0 +1,41 @@
+@import '../../../Variables.scss';
+
+.Burger {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  cursor: pointer;
+  &-Line {
+    width: 22px;
+    height: 1px;
+    border-radius: 1px;
+    background-color: $black;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 1px;
+    border-radius: 1px;
+    background-color: $black;
+    transition: ease .3s;
+  }
+  &::after {
+    top: 5.5px;
+  }
+  &::before {
+    bottom: 5.5px;
+  }
+ 
+}
+
+@media(max-width: 1024px) {
+  .Burger {
+    display: flex;
+  }
+}

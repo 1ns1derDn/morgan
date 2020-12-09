@@ -1,0 +1,24 @@
+@import '../../../Variables.scss';
+.HeadPanel {
+  display: flex;
+  &-Item {
+    & + .HeadPanel-Item {
+      margin-left: 16px;
+    }
+  }
+  &-Link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 64px;
+    padding: 0 30px;
+    @include hoverHeaderItem;
+    &.HeadPanel-Link_Active {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../../Variables.scss';
+
+.ButtonSearch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 64px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  @include hoverHeaderItem;
+}

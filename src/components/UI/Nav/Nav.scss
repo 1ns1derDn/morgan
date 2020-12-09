@@ -1,0 +1,33 @@
+@import '../../../Variables.scss';
+
+.Nav {
+  &-Title {
+    display: none;
+    margin-top: 16px;
+    margin-bottom: 14px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+    color: $grey;
+  }
+  &-List {
+    display: flex;
+  }
+  &-Link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 131px;
+    height: 64px;
+    padding: 0 16px;
+    color: $grey;
+    @include hoverHeaderItem;
+    &.Nav-Link_Active {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+

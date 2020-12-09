@@ -1,0 +1,96 @@
+@import '../../Variables.scss';
+
+.Header {
+  border-bottom: 1px solid $grey;
+  &-Inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  .Nav {
+    margin-right: auto;
+    margin-left: 17px;
+    &-Item {
+      & + .Nav-Item {
+        margin-left: 12px;
+      }
+    }
+  }
+  &.Header_MenuOpen {
+    .Nav {
+      &-Wrapper {
+        transform: translateX(0);
+        transition: .3s ease;
+      }
+    }
+    .Burger {
+      .Burger-Line {
+        display: none;
+      }
+      &::before {
+        bottom: 13.5px;
+        transform: rotate(-45deg);
+      }
+      &::after {
+        top: 13.5px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+@media(max-width: 1024px) {
+  .Header {
+    position: relative;
+    .Nav {
+      position: static;
+      order: 1;
+      margin-right: 0;
+      margin-left: 0;
+      &-Wrapper {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 64px);
+        padding: 0 12px;
+        transform: translateX(-100%);
+      }
+      &-Title {
+        display: block;
+      }
+      &-List {
+        display: block;
+      }
+      &-Item {
+        border-bottom: 1px solid $grey;
+        & + .Nav-Item {
+          margin-left: 0px;
+        }
+      }
+      &-Link {
+        justify-content: flex-start;
+        padding: 0;
+      }
+    }
+    .Logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      order: 2;
+    }
+    .HeadPanel {
+      order: 3;
+    }
+    .ButtonSearch {
+      display: none;
+    }
+    .HeadPanel-Link {
+      width: 40px;
+      padding: 0 15px;
+    }
+  }
+}
+
