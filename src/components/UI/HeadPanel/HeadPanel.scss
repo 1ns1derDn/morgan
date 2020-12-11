@@ -2,6 +2,13 @@
 .HeadPanel {
   display: flex;
   &-Item {
+    position: relative;
+    &:hover {
+      .HeadPanel-PreviewBasket {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
     & + .HeadPanel-Item {
       margin-left: 16px;
     }
@@ -19,6 +26,22 @@
       &::before {
         opacity: 1;
       }
+    }
+  }
+  &-PreviewBasket {
+    position: absolute;
+    top: 84px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      top: -20px;
+      left: 0;
     }
   }
 }

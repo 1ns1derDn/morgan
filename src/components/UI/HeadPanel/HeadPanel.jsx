@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import ButtonSearch from '../ButtonSearch/ButtonSearch'
 import LoginUserIcon from '../LoginUserIcon/LoginUserIcon'
 import CardIcon from '../CardIcon/CardIcon'
+import PreviewBasket from '../PreviewBasket/PreviewBasket'
 
 import './HeadPanel.scss'
 
@@ -27,8 +28,11 @@ const HeadPanel = () => (
         to='card'>
         <CardIcon />
       </NavLink>
+      <PreviewBasket clazz='HeadPanel-PreviewBasket'/>
     </li>
   </ul>
 )
+
+// Drop-PreviewBasket
 
 export default HeadPanel

@@ -1,0 +1,21 @@
+@import '../../../Variables.scss';
+
+.CreateAccount {
+  padding-top: 52px;
+  &-Title {
+    margin-bottom: 13px;
+  }
+  &-Text {
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: $grey;
+    margin-bottom: 12px;
+  }
+  &-Button {
+    margin-bottom: 12px;
+  }
+  &-RowContainer {
+    margin-bottom: 20px;
+  }
+}

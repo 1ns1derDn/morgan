@@ -1,0 +1,43 @@
+@import '../../../Variables.scss';
+
+.OrderSuccess {
+  max-width: 376px;
+  width: 100%;
+  &-Title {
+    margin-bottom: 24px;
+  }
+  &-Icon {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  &-Text {
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    p + p {
+      margin-top: 6px;
+    }
+    span {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: $black;
+    }
+  }
+  &-Box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-Info {
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: $DarkGray;
+    span {
+      color: $black;
+    }
+  }
+}

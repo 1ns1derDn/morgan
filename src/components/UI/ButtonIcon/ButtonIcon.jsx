@@ -1,9 +1,11 @@
 import React from 'react'
 
-const ButtonIcon = ({ img, alt, onClick }) => (
-  <button onClick={onClick}>
+import './ButtonIcon.scss'
+
+const ButtonIcon = ({ img, alt, onClick, clazz }) => (
+  <button className={clazz ? 'ButtonIcon ' + clazz : 'ButtonIcon'}   onClick = { onClick } >
     <img src={img} alt={alt} />
-  </button>
+  </button >
 )
 
 export default ButtonIcon

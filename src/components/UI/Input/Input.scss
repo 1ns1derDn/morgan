@@ -1,0 +1,66 @@
+@import '../../../Variables.scss';
+
+.Input {
+  width: 100%;
+  &-Top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+  }
+  &-Name {
+    font-size: 14px;
+    line-height: 21px;
+    color: $black;
+  }
+  &-Box {
+    position: relative;
+    height: 40px;
+    width: 100%;
+  }
+  &-Link {
+    font-size: 12px;
+    line-height: 10px;
+    color: $black;
+    border-bottom: 1px solid $black;
+  }
+  &-Inp {
+    height: 40px;
+    width: 100%;
+    border: 1px solid $grey;
+    padding: 0 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color:$black;
+    &::placeholder {
+      color: $grey;
+    }
+    &:focus {
+      &::placeholder {
+        font-size: 0;
+      }
+    }
+  }
+  &-Button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+  &-Error {
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: $red;
+    margin-bottom: 4px;
+  }
+  &.Input_ErrorMessage {
+    .Input-Inp {
+      border-color: $red;
+    } 
+  }
+}

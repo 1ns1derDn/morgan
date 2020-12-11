@@ -13,6 +13,7 @@ const Nav = () => (
       <ul className='Nav-List'>
         <li className='Nav-Item'>
           <NavLink
+            onClick={() => console.log('Hello world!')}
             className='Nav-Link'
             to='/interior-ceiling'
             activeClassName="Nav-Link_Active">

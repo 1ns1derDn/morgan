@@ -1,0 +1,101 @@
+@import '../../../Variables.scss';
+
+.BasketItem {
+  display: flex;
+  max-width: 655px;
+  max-height: 185px;
+  width: 100%;
+  &-Image {
+    max-width: 176px;
+    width: 100%;
+    margin-right: 24px;
+    img {
+      width: 100%;
+    }
+  }
+  &-Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $grey;
+  }
+  &-Top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-Wrapper {
+    width: 100%;
+  }
+  &-Title {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: $DarkGray;
+    margin-bottom: 9px;
+  }
+  &-Bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-Control {
+    display: flex;
+    align-items: center;
+  }
+  &-Button {
+    width: 33px;
+    height: 33px;
+    border: 1px solid $black;
+  }
+  &-Quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33px;
+    height: 33px;
+    margin: 0 8px;
+    border: 1px solid $grey;
+  }
+  &-Price {
+    align-self: flex-end;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $black;
+  }
+  &-PriceQuantity {
+    color: $DarkGray;
+  }
+  &.BasketItem_CardItem {
+    max-width: 248px;
+    max-height: 76px;
+    .BasketItem-Content {
+      padding-bottom: 6px;
+    }
+    .BasketItem-Name {
+      font-size: 12px;
+      line-height: 22px;
+    }
+    .BasketItem-Image {
+      max-width: 68px;
+      margin-right: 16px;
+    }
+    .BasketItem-Top {
+      display: none;
+    }
+    .BasketItem-Control {
+      display: none;
+    }
+    .BasketItem-Title {
+      display: none;
+    }
+    .BasketItem-Price {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+}

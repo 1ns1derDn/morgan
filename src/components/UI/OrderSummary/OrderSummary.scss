@@ -1,0 +1,63 @@
+@import '../../../Variables.scss';
+.OrderSummary {
+  max-width: 272px;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  color: $black;
+  border: 1px solid $grey;
+  &-Title {
+    margin-bottom: 10px;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: $DarkGray;
+  }
+  &-List {
+    margin-bottom: 18px;
+  }
+  &-Item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & + .OrderSummary-Item {
+      margin-top: 10px;
+    }
+  }
+  &-ItemName {
+
+  }
+  &-ItemPrice {
+
+  }
+  &-Express {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  &-ExpressName {
+
+  }
+  &-ExpressPrice {
+
+  }
+  &-Box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 1px solid $grey;
+  }
+  &-TitleTotal {
+
+  }
+  &-Total {
+
+  }
+  &-Button {
+
+  }
+}

@@ -6,6 +6,10 @@ body {
   box-sizing: border-box;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 *,
 *::before,
 *::after {
@@ -52,4 +56,19 @@ a {
   margin: 0 auto;
 }
 
+.ContainerForm {
+  max-width: 367px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.Link {
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: $black;
+  &.Link_underline {
+    text-decoration-line: underline;
+  }
+}
 
