@@ -1,0 +1,44 @@
+@import '../../../Variables.scss';
+
+.Product {
+  position: relative;
+  max-width: 272px;
+  background: #F0F0F0;
+  &-Button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+  }
+  &-Image {
+    position: relative;
+    width: 272px;
+    height: 284px;
+    overflow: hidden;
+    background: #F0F0F0;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+  &-Box {
+    display: flex;
+    flex-direction: column;
+    background: #F0F0F0;
+    padding: 16px;
+  }
+  &-Name {
+    font-size: 14px;
+    line-height: 21px;
+    color: $black;
+    font-weight: 400;
+  }
+  &-Price {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: $black;
+  }
+} 

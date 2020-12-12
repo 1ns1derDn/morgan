@@ -1,0 +1,26 @@
+@import '../../../Variables.scss';
+
+.NotFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  &-Box {
+    max-width: 438px;
+    text-align: center;
+  }
+  &-Image {
+    text-align: center;
+  }
+  &-Text {
+    margin-bottom: 25px;
+    font-size: 26px;
+    line-height: 39px;
+    letter-spacing: -0.01em;
+    color: $black;
+  }
+  &-Button {
+    margin: 0 auto;
+    max-width: 256px;
+  }
+}

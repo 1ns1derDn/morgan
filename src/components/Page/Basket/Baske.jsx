@@ -7,6 +7,7 @@ import OrderSuccess from '../../UI/OrederSuccess/OrderSuccess'
 import image from './image.jpg'
 import './Basket.scss'
 
+
 const Basket = () => (
   <div className='Basket'>
     <div className='Container'>
@@ -18,19 +19,17 @@ const Basket = () => (
 )
 
 const ContainerBasket = () => {
-  if (true) {
-    return <OrderSuccess />
-  //   return <BasketItem
-  //   price='£480.00'
-  //   category='Table lamp'
-  //   name='Sunset'
-  //   quantity='1'
-  //   img={image}
-  //   alt='dasdd'
-  // />
-  }
   return (
     <>
+      <BasketItem
+        price='£480.00'
+        category='Table lamp'
+        name='Sunset'
+        quantity='1'
+        img={image}
+        alt='dasdd'
+      />
+      <OrderSuccess clazz='Basket-OrderSuccess' />
       <OrderSummary />
       < Basket />
     </>

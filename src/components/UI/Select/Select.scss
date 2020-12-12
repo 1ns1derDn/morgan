@@ -1,0 +1,90 @@
+@import '../../../Variables.scss';
+
+.Select {
+  position: relative;
+  display: inline-block;
+  &-Head {
+    display: flex;
+    align-items: center;
+    height: 22px;
+  }
+  &-HeadSelect {
+    position: relative;
+    height: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      background-image: url('./icon/arrowDown.svg');
+      width: 22px;
+      height: 22px;
+      transform: translateY(-50%);
+    } 
+  }
+  &-HeadInput {
+    height: 100%;
+    cursor: pointer;
+    margin-left: 12px;
+    background-color: transparent;
+    border: none;
+  }
+  &-Drop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 176px;
+    width: 100%;
+    padding: 6px 0;
+    background: #FAFAFA;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
+  }
+  &-Label {
+    position: relative;
+    width: 100%;
+    &::before {
+      display: none;
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      background-image: url('./icon/icCheck.svg');
+      width: 22px;
+      height: 22px;
+      transform: translateY(-50%);
+    }
+    &.Select-Label_Selected {
+      &::before {
+        display: block;
+      }
+    }
+  }
+  &-Input {
+    text-align: left;
+    width: 100%;
+    height: 34px;
+    padding: 8px 12px 4px;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    color: $black;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  &.Select_Open {
+    .Select-HeadSelect {
+      &::before {
+        display: none;
+      }
+    }
+    .Select-Drop {
+      display: block;
+    }
+  }
+}

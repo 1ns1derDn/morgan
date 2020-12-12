@@ -7,10 +7,17 @@ import store from './store'
 
 import App from './components/App/App'
 
+import ServiceLamp from './services/serviceLamp'
+import ContextServiceProducts from './components/Context/ContextServiceProducts'
+
+const serviceLamp = new ServiceLamp()
+
 ReactDOM.render(
   <ReduxProvider store={store}>
     <Router>
-      <App />
+      <ContextServiceProducts.Provider value={serviceLamp}>
+        <App />
+      </ContextServiceProducts.Provider>
     </Router>
   </ReduxProvider>,
   document.getElementById('root')

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
+import ContainerHome from '../Container/ContainerHome'
 import Login from '../Page/Login/Login'
 import CreateAccount from '../Page/CreateAccount/CreateAccount'
 import ContainerResetPassword from '../Page/ResetPassword/ResetPassword'
@@ -8,24 +9,27 @@ import Basket from '../Page/Basket/Baske'
 import NotFound from '../Page/NotFound/NotFound'
 import './App.scss'
 
+
+import ContainerProductListCategory from '../Container/ProductListCategory'
+
 const App = () => (
   <>
     <Header />
     <Switch>
       <Route path="/" exact>
-        <h1>Interior ceiling</h1>
+        <ContainerHome />
       </Route>
       <Route path="/interior-ceiling" exact>
-        <h1>Interior ceiling</h1>
+        <ContainerProductListCategory />
       </Route>
       <Route path="/floor-lamps">
-        <h1>Floor lamps</h1>
+        <ContainerProductListCategory />
       </Route>
       <Route path="/exterior-ceiling">
-        <h1>Exterior ceiling</h1>
+        <ContainerProductListCategory />
       </Route>
       <Route path="/table-lamps">
-        <h1>Table lamps</h1>
+        <ContainerProductListCategory />
       </Route>
       <Route path="/login">
         <Login />
@@ -45,7 +49,5 @@ const App = () => (
     </Switch>
   </>
 )
-
-
 
 export default App

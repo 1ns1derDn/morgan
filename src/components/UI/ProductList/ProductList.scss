@@ -1,0 +1,11 @@
+.ProductList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px 0 24px;
+  margin-left: -16px;
+  &-Item {
+    flex-basis: calc(25% - 16px);
+    margin-left: 16px;
+    margin-bottom: 16px;
+  }
+}

@@ -6,8 +6,8 @@ import success from './icon/success.svg'
 
 import './OrderSuccess.scss'
 
-const OrderSuccess = () => (
-  <section className='OrderSuccess'>
+const OrderSuccess = (props) => (
+  <section className={props.clazz ? 'OrderSuccess ' + props.clazz : 'OrderSuccess'}>
     <Title classes='OrderSuccess-Title' title='THANK YOU!' />
     <div className='OrderSuccess-Icon'>
       <img src={success} alt='icon success oreder' />
@@ -24,7 +24,7 @@ const OrderSuccess = () => (
       <span className='OrderSuccess-Info'>Order: &nbsp;<span>0844253425</span></span>
       <span className='OrderSuccess-Info'>Date order: &nbsp;<span>07/12/20</span></span>
     </div>
-    <ButtonWhite title='CONTINUE SHOPPING'/>
+    <ButtonWhite clazz='OrderSuccess-Button' title='CONTINUE SHOPPING'/>
   </section>
 )
 

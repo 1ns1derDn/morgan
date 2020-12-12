@@ -1,0 +1,68 @@
+@import '../../../Variables.scss';
+
+.Category {
+  &-Inner {
+    display: grid;
+    grid-template-columns: 3.5fr 3.5fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px 8px;
+    width: auto;
+    grid-template-areas:
+      "CategoryItem1 CategoryItem1 CategoryItem2"
+      "CategoryItem3 CategoryItem4 CategoryItem2";
+  }
+  &-Item {
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  &-Title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: $black;
+    &.Category-Title_White {
+      color: #FAFAFA;
+    }
+  }
+  &-Item1 {
+    grid-area: CategoryItem1;
+  }
+  &-Item2 {
+    grid-area: CategoryItem2;
+  }
+  &-Item3 {
+    grid-area: CategoryItem3;
+  }
+  &-Item4 {
+    grid-area: CategoryItem4;
+  }
+}
+
+@media(max-width: 767px) {
+  .Category-Inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "CategoryItem1 CategoryItem1"
+    "CategoryItem3 CategoryItem2"
+    "CategoryItem4 CategoryItem2";
+  }
+  .Category-Item2 {
+    position: relative;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      width: 160%;
+    }
+  }
+}
+
