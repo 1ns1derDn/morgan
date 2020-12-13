@@ -10,7 +10,7 @@ const Product = (props) => (
   <div className='Product'>
     {
       props.isBasket ?
-        <ButtonIcon onClick={props.handleRemoveProductFromBasket} clazz='Product-Button' img={remove} alt='Remove item' /> :
+        <ButtonIcon onClick={props.handleAllRemoveProductFromBasket} clazz='Product-Button' img={remove} alt='Remove item' /> :
         <ButtonIcon onClick={props.handleAddProductToBasket} clazz='Product-Button' img={addIcon} alt='Add item' />
     }
     <div className='Product-Image'>

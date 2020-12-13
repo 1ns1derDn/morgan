@@ -16,7 +16,6 @@ export const fetchCategoriesFailure = (error) => ({
 export const fetchCategories = (getCategories) => () => (dispatch) => {
   getCategories()
     .then(data => {
-      console.log(data);
       dispatch(fetchCategoriesSuccess(data.categories))
     })
     .catch(error => dispatch(fetchCategoriesFailure(error)))

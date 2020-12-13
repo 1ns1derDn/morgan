@@ -10,6 +10,7 @@ const ProductCategory = (props) => {
         handleSelected={props.handleSelected}
         select={props.sortSelect} />
       <ProductList
+        categories={props.categories}
         handleRemoveProductFromBasket={props.handleRemoveProductFromBasket}
         handleAddProductToBasket={props.handleAddProductToBasket}
         products={props.products} />

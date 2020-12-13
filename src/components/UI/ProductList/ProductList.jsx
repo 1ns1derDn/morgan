@@ -1,18 +1,24 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import {
+  addProductToBasket,
+  AllRemoveProductFromBasket
+} from '../../../actions/basketActions'
+
 import Product from '../Product/Product'
 
 import './ProductList.scss'
 
 const ProductList = (props) => {
-
-  const basketProducts = useSelector(state => state.basket.basketProducts)
-
   return (
     <ul className='ProductList'>
       {
         props.products.map((product) => {
-          let isBasket = basketProducts.map((product) => product.id).includes(product.id)
+          const isBasket = props.basketProducts.map((product) => product.id).includes(product.id)
+          let category = '' 
+          if(props.categories.length > 0) {
+            category = props.categories.find((category) => category.id === product.categoryId).title
+          }
           return (
             <li key={product.id} className='ProductList-Item'>
               <Product
@@ -21,8 +27,8 @@ const ProductList = (props) => {
                 image={product.image}
                 alt={product.name}
                 isBasket={isBasket}
-                handleAddProductToBasket={() => props.handleAddProductToBasket(product, isBasket)}
-                handleRemoveProductFromBasket={() => props.handleRemoveProductFromBasket(product.id)}
+                handleAddProductToBasket={() => props.handleAddProductToBasket({ ...product, category }, isBasket)}
+                handleAllRemoveProductFromBasket={() => props.handleAllRemoveProductFromBasket(product.id)}
               />
             </li>
           )
@@ -32,8 +38,21 @@ const ProductList = (props) => {
   )
 }
 
-const ConrainerProductList = () => {
-  return <ProductList />
+const ConrainerProductList = (props) => {
+
+  const dispatch = useDispatch()
+  const products = useSelector(state => state.products.productsVisible)
+  const basketProducts = useSelector(state => state.basket.basketProducts)
+  const handleAddProductToBasket = (product, isBasket) => dispatch(addProductToBasket(product, isBasket))
+  const handleAllRemoveProductFromBasket = (id) => dispatch(AllRemoveProductFromBasket(id))
+
+  return <ProductList
+    categories={props.categories}
+    basketProducts={basketProducts}
+    handleAddProductToBasket={handleAddProductToBasket}
+    handleAllRemoveProductFromBasket={handleAllRemoveProductFromBasket}
+    products={products}
+  />
 }
 
-export default ProductList
+export default ConrainerProductList

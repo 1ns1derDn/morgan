@@ -7,6 +7,8 @@ export const addProductToBasket = (product, isBasket) => ({
     id: product.id,
     isBasket: isBasket,
     count: 1,
+    category: product.category,
+    totle: product.price
   }
 })
 

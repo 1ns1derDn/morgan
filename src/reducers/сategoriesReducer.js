@@ -1,5 +1,5 @@
 const initialState = {
-  categories: null,
+  categories: [],
   error: false,
   selectedCategoryId: ''
 }

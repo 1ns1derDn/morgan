@@ -9,7 +9,7 @@ import image4 from './image4.jpg'
 import './Category.scss'
 
 const Category = ({categories, clazz}) => {
-  if (!categories) {
+  if (categories.length === 0) {
     return null
   }
   return (

@@ -13,7 +13,13 @@ import ContextServiceProducts from '../Context/ContextServiceProducts'
 import ContainerProductListCategory from '../Container/ProductListCategory'
 
 const App = () => {
-  const serviceLamp = useContext(ContextServiceProducts)
+
+  const {
+    getProductsTableLamps,
+    getProductsFloorLamps,
+    getProductsExteriorCeiling,
+    getProductsInteriorCeiling
+  } = useContext(ContextServiceProducts)
 
   return (
     <>
@@ -24,22 +30,22 @@ const App = () => {
         </Route>
         <Route path="/interior-ceiling" exact>
           <ContainerProductListCategory
-            getProducts={serviceLamp.getProductsTableLamps}
+            getProducts={getProductsTableLamps}
           />
         </Route>
         <Route path="/floor-lamps">
           <ContainerProductListCategory
-            getProducts={serviceLamp.getProductsFloorLamps}
+            getProducts={getProductsFloorLamps}
           />
         </Route>
         <Route path="/exterior-ceiling">
           <ContainerProductListCategory
-            getProducts={serviceLamp.getProductsExteriorCeiling}
+            getProducts={getProductsExteriorCeiling}
           />
         </Route>
         <Route path="/table-lamps">
           <ContainerProductListCategory
-            getProducts={serviceLamp.getProductsInteriorCeiling}
+            getProducts={getProductsInteriorCeiling}
           />
         </Route>
         <Route path="/login">

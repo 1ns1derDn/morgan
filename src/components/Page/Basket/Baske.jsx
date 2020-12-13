@@ -2,13 +2,10 @@ import React from 'react'
 import BasketEmpty from '../../UI/BasketEmpty/BasketEmpty'
 import OrderSummary from '../../UI/OrderSummary/OrderSummary'
 import BasketItem from '../../UI/BasketItem/BasketItem'
-import OrderSuccess from '../../UI/OrederSuccess/OrderSuccess'
 
 import './Basket.scss'
 
-
 const Basket = (props) => {
-  console.log(props.basketProducts);
   if (!props.basketProducts) {
     return (
       <div className='Basket'>
@@ -26,12 +23,14 @@ const Basket = (props) => {
         props.basketProducts.map(product => {
           return <li key={product.id}>
             <BasketItem
-              price={product.price}
-              category='Table lamp'
+              price={product.totle}
+              category={product.category}
               name={product.name}
-              quantity='1'
+              quantity={product.count}
               img={product.image}
               alt={product.alias}
+              handleAddProductToBasket={() => props.handleAddProductToBasket(product, true)}
+              handleRemoveProductFromBasket={() => {props.handleRemoveProductFromBasket(product.id)}}
             />
             <OrderSummary />
           </li>
@@ -40,8 +39,5 @@ const Basket = (props) => {
     </ul>
   )
 }
-
-{/* <OrderSuccess clazz='Basket-OrderSuccess' /> */}
-
 
 export default Basket
