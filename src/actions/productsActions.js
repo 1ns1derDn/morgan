@@ -26,14 +26,11 @@ export const setProductsVisivle = (products) => ({
   payload: products
 })
 
-export const fetchProducts = (service, selectedCategoryId) => () => (dispatch) => {
-  service.getProducts()
+export const fetchProducts = (getProducts) => () => (dispatch) => {
+  getProducts()
     .then(data => {
-      dispatch(fetchProductsSuccess(data.products))
-      dispatch(setProductsVisivle(data.products))
-    })
-    .then(() => {
-      dispatch(filterProductsCategories(selectedCategoryId))
+      dispatch(fetchProductsSuccess(data))
+      dispatch(setProductsVisivle(data))
     })
     .catch(error => dispatch(fetchProductsFailure(error)))
 }

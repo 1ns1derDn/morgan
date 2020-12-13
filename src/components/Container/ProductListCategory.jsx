@@ -1,44 +1,38 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchProducts, sortProduct, filterProductsCategories } from '../../actions/productsActions'
-import { fetchCategories, handleSelectedCategory } from '../../actions/сategoriesActions'
+import { sortProduct, filterProductsCategories, fetchProducts } from '../../actions/productsActions'
+import { addProductToBasket, removeProductFromBasket } from '../../actions/basketActions'
 import { handleToggleOpen, handleSelected } from '../../actions/sortSelectActions'
-import ContextServiceProducts from '../Context/ContextServiceProducts'
 import ProductListCategory from '../Page/ProductListCategory/ProductCategory'
 
-
-const ContainerProductListCategory = () => {
+const ContainerProductListCategory = ({ getProducts }) => {
 
   const dispatch = useDispatch()
-
-  const serviceLamp = useContext(ContextServiceProducts)
 
   const products = useSelector(state => state.products)
   const sortSelect = useSelector(state => state.sortSelect)
   const selectedCategoryId = useSelector(state => state.categories.selectedCategoryId)
 
-  const fnFetchProducts = () => dispatch(fetchProducts(serviceLamp, selectedCategoryId)())
-  const fnFetchCategories = () => dispatch(fetchCategories(serviceLamp)())
+  const fnFetchProducts = useCallback(() => dispatch(fetchProducts(getProducts)()), [getProducts, dispatch])
   const fnHandleToggleOpen = () => dispatch(handleToggleOpen())
-  const fnSortProducts = (type, products) => dispatch(sortProduct(type, products))
+  const fnSortProducts = useCallback((type, products) => dispatch(sortProduct(type, products)), [dispatch])
   const fnHandleSelected = (e, id) => dispatch(handleSelected(e.target.value, id))
-  const fnHandleSelectedCategory = (categoryId) => dispatch(handleSelectedCategory(categoryId))
-  const fnFilterProductsCategories = (categoryId) => dispatch(filterProductsCategories(categoryId))
-
-  console.log(products.productsVisible);
-
+  const fnFilterProductsCategories = useCallback((categoryId) => dispatch(filterProductsCategories(categoryId)), [dispatch])
+  const handleAddProductToBasket = (product, isBasket) => dispatch(addProductToBasket(product, isBasket))
+  const handleRemoveProductFromBasket = (id) => dispatch(removeProductFromBasket(id))
   useEffect(() => {
+    console.log(1);
     fnFetchProducts()
-    fnFetchCategories()
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [fnFetchProducts])
 
   useEffect(() => {
     fnSortProducts(sortSelect.value, products.products)
     fnFilterProductsCategories(selectedCategoryId)
-  }, [sortSelect.value, selectedCategoryId]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [sortSelect.value, selectedCategoryId, fnSortProducts, fnFilterProductsCategories, products.products])
 
   return <ProductListCategory
-    fnHandleSelectedCategory={fnHandleSelectedCategory}
+    handleAddProductToBasket={handleAddProductToBasket}
+    handleRemoveProductFromBasket={handleRemoveProductFromBasket}
     products={products.productsVisible}
     sortSelect={sortSelect}
     handleToggleOpen={fnHandleToggleOpen}

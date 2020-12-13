@@ -5,7 +5,7 @@ import logo from './icon/logo.svg'
 import './Logo.scss'
 
 const Logo = (props) => (
-  <Link onClick={() => props.fnHandleSelectedCategory(props.categoryId)} className='Logo' to='/'>
+  <Link className='Logo' to='/'>
     <img className='Logo-Icon' src={logo} alt='logotype' />
   </Link>
 )

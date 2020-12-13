@@ -9,9 +9,11 @@ const ProductCategory = (props) => {
         handleToggleOpen={props.handleToggleOpen}
         handleSelected={props.handleSelected}
         select={props.sortSelect} />
-      <ProductList products={props.products} />
+      <ProductList
+        handleRemoveProductFromBasket={props.handleRemoveProductFromBasket}
+        handleAddProductToBasket={props.handleAddProductToBasket}
+        products={props.products} />
     </div>
   )
 }
-
 export default ProductCategory

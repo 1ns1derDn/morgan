@@ -13,9 +13,10 @@ export const fetchCategoriesFailure = (error) => ({
   payload: error
 })
 
-export const fetchCategories = (service) => () => (dispatch) => {
-  service.getCategories()
+export const fetchCategories = (getCategories) => () => (dispatch) => {
+  getCategories()
     .then(data => {
+      console.log(data);
       dispatch(fetchCategoriesSuccess(data.categories))
     })
     .catch(error => dispatch(fetchCategoriesFailure(error)))

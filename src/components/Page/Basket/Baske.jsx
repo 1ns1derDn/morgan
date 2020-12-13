@@ -4,36 +4,44 @@ import OrderSummary from '../../UI/OrderSummary/OrderSummary'
 import BasketItem from '../../UI/BasketItem/BasketItem'
 import OrderSuccess from '../../UI/OrederSuccess/OrderSuccess'
 
-import image from './image.jpg'
 import './Basket.scss'
 
 
-const Basket = () => (
-  <div className='Basket'>
-    <div className='Container'>
-      <div className='Basket-Inner'>
-        <BasketEmpty />
+const Basket = (props) => {
+  console.log(props.basketProducts);
+  if (!props.basketProducts) {
+    return (
+      <div className='Basket'>
+        <div className='Container'>
+          <div className='Basket-Inner'>
+            <BasketEmpty />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-)
-
-const ContainerBasket = () => {
+    )
+  }
   return (
-    <>
-      <BasketItem
-        price='£480.00'
-        category='Table lamp'
-        name='Sunset'
-        quantity='1'
-        img={image}
-        alt='dasdd'
-      />
-      <OrderSuccess clazz='Basket-OrderSuccess' />
-      <OrderSummary />
-      < Basket />
-    </>
+    <ul>
+      {
+        props.basketProducts.map(product => {
+          return <li key={product.id}>
+            <BasketItem
+              price={product.price}
+              category='Table lamp'
+              name={product.name}
+              quantity='1'
+              img={product.image}
+              alt={product.alias}
+            />
+            <OrderSummary />
+          </li>
+        })
+      }
+    </ul>
   )
 }
 
-export default ContainerBasket
+{/* <OrderSuccess clazz='Basket-OrderSuccess' /> */}
+
+
+export default Basket

@@ -1,8 +1,6 @@
 import React from 'react'
-import ProductList from '../../UI/ProductList/ProductList'
-import Select from '../../UI/Select/Select'
 import Category from '../../UI/Category/Category'
-
+import ContainerProductListCategory from '../../Container/ProductListCategory'
 import './Home.scss'
 
 const Home = (props) => (
@@ -13,13 +11,9 @@ const Home = (props) => (
           fnHandleSelectedCategory={props.fnHandleSelectedCategory}
           categories={props.categories}
           clazz='Home-Category' />
-        <Select
-          handleToggleOpen={props.handleToggleOpen}
-          handleSelected={props.handleSelected}
-          select={props.sortSelect} />
-        <ProductList products={props.products} />
       </div>
     </div>
+    <ContainerProductListCategory getProducts={props.getProducts}/>
   </div>
 )
 

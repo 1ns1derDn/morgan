@@ -12,7 +12,6 @@ const Nav = (props) => (
       <ul className='Nav-List'>
         <li className='Nav-Item'>
           <NavLink
-            onClick={() => { props.fnHandleSelectedCategory(props.categories[0].id) }}
             className='Nav-Link'
             to='/interior-ceiling'
             activeClassName="Nav-Link_Active">
@@ -21,7 +20,6 @@ const Nav = (props) => (
         </li>
         <li className='Nav-Item'>
           <NavLink
-            onClick={() => { props.fnHandleSelectedCategory(props.categories[1].id) }}
             className='Nav-Link'
             to='/floor-lamps'
             activeClassName="Nav-Link_Active">
@@ -30,7 +28,6 @@ const Nav = (props) => (
         </li>
         <li className='Nav-Item'>
           <NavLink
-            onClick={() => { props.fnHandleSelectedCategory(props.categories[2].id) }}
             className='Nav-Link'
             to='/exterior-ceiling'
             activeClassName="Nav-Link_Active">
@@ -39,7 +36,6 @@ const Nav = (props) => (
         </li>
         <li className='Nav-Item'>
           <NavLink
-            onClick={() => { props.fnHandleSelectedCategory(props.categories[3].id) }}
             className='Nav-Link'
             to='/table-lamps'
             activeClassName="Nav-Link_Active">
