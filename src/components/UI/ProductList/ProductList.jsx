@@ -28,7 +28,7 @@ const ProductList = (props) => {
                 alt={product.name}
                 isBasket={isBasket}
                 handleAddProductToBasket={() => props.handleAddProductToBasket({ ...product, category }, isBasket)}
-                handleAllRemoveProductFromBasket={() => props.handleAllRemoveProductFromBasket(product.id)}
+                handleAllRemoveProductFromBasket={() => props.handleAllRemoveProductFromBasket({ ...product, category }, isBasket)}
               />
             </li>
           )
@@ -44,7 +44,7 @@ const ConrainerProductList = (props) => {
   const products = useSelector(state => state.products.productsVisible)
   const basketProducts = useSelector(state => state.basket.basketProducts)
   const handleAddProductToBasket = (product, isBasket) => dispatch(addProductToBasket(product, isBasket))
-  const handleAllRemoveProductFromBasket = (id) => dispatch(AllRemoveProductFromBasket(id))
+  const handleAllRemoveProductFromBasket = (products) => dispatch(AllRemoveProductFromBasket(products))
 
   return <ProductList
     categories={props.categories}

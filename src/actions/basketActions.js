@@ -12,14 +12,14 @@ export const addProductToBasket = (product, isBasket) => ({
   }
 })
 
-export const removeProductFromBasket = (id) => ({
+export const removeProductFromBasket = (product) => ({
   type: 'REMOVE_PRODUCT_FROM_BASKET',
-  payload: id
+  payload: product
 })
 
-export const AllRemoveProductFromBasket = (id) => ({
+export const AllRemoveProductFromBasket = (product) => ({
   type: 'All_REMOVE_PRODUCT_FROM_BASKET',
-  payload: id
+  payload: product
 })
 
 

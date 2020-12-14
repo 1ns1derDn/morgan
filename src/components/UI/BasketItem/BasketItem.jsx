@@ -8,7 +8,6 @@ import plus from './icon/plus.svg'
 import './BasketItem.scss'
 
 const BasketItem = (props) => {
-  console.log(props.category);
   return (
     <div className={props.clazz ? 'BasketItem ' + props.clazz : 'BasketItem'}>
       <div className='BasketItem-Image'>

@@ -3,18 +3,26 @@ import ButtonBlack from '../ButtonBlack/ButtonBlack'
 import BasketItem from '../BasketItem/BasketItem'
 import './PreviewBasket.scss'
 
-import image from '../../Page/Basket/image.jpg'
-
 const PreviewBasket = (props) => (
   <div className={props.clazz ? 'PreviewBasket ' + props.clazz : 'PreviewBasket'}>
-    <BasketItem
-      clazz='BasketItem_CardItem'
-      price='£480.00'
-      category='Table lamp'
-      name='Sunset'
-      quantity='1'
-      img={image}
-      alt='dasdd' />
+    <ul>
+      {
+        props.basketProducts.map((product) => {
+          return (
+            <li key={product.id}>
+              <BasketItem
+                clazz='BasketItem_CardItem'
+                price={product.totle}
+                category={product.category}
+                name={product.name}
+                quantity={product.count}
+                img={product.image}
+                alt='dasdd' />
+            </li>
+          )
+        })
+      }
+    </ul>
     <ButtonBlack clazz='ButtonBlack_Small' title='GO TO CHECKOUT' />
   </div>
 )

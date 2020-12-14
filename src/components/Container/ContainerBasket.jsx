@@ -5,11 +5,12 @@ import Basket from '../Page/Basket/Baske'
 
 const ContainerBasket = () => {
   const dispatch = useDispatch()
-
   const basketProducts = useSelector(state => state.basket.basketProducts)
+  const orderTotle = useSelector(state => state.basket.orderTotle)
   const handleAddProductToBasket = (product, isBasket) => dispatch(addProductToBasket(product, isBasket))
-  const handleRemoveProductFromBasket = (id) => dispatch(removeProductFromBasket(id))
+  const handleRemoveProductFromBasket = (product) => dispatch(removeProductFromBasket(product))
   return <Basket
+  orderTotle={orderTotle}
   handleAddProductToBasket={handleAddProductToBasket}
   handleRemoveProductFromBasket={handleRemoveProductFromBasket}
   basketProducts={basketProducts}/>

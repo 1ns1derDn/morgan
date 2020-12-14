@@ -1,8 +1,11 @@
 .Basket {
-  padding-top: 52px;
+  padding-top: 24px;
   &-Inner {
     display: flex;
     justify-content: center;
+  }
+  &-Title {
+    margin-bottom: 52px;
   }
   &-OrderSuccess {
     padding-top: 52px;

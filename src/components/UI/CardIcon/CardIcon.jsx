@@ -3,11 +3,11 @@ import card from './icon/card.svg'
 
 import './CardIcon.scss'
 
-const CarIcon = () => (
+const CarIcon = (props) => (
   <div className='CardIcon'>
     <img src={card} alt='card' />
     <span className='CardIcon-Count'>
-      0
+      {props.quantity}
     </span>
   </div>
 )
