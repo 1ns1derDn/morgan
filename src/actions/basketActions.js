@@ -22,4 +22,22 @@ export const AllRemoveProductFromBasket = (product) => ({
   payload: product
 })
 
+export const sendOrderProcess = (timeStamp, id, orderSuccess) => ({
+  type: 'SEND_ORDER_PROCESS',
+  payload: {
+    timeStamp,
+    id,
+    orderSuccess
+  }
+})
+
+export const startShop = () => ({
+  type: 'START_SHOP'
+})  
+
+
+export const orderProcessRefresh = () => ({
+  type: 'ORDER_PROCESS_REFRESH'
+})
+
 

@@ -16,7 +16,7 @@ const BasketEmpty = () => (
         Your basket is empty
       </p>
     </div>
-    <ButtonBlack title='START SHOPPING'/>
+    <ButtonBlack buttonIsLink to='/' title='START SHOPPING'/>
   </div>
 )
 

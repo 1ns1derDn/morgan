@@ -1,6 +1,7 @@
 export default class ServiceProducts {
-  _apiProducts = 'https://morgan-shop.herokuapp.com';
-  _apiCategories = 'https://morgan-shop.herokuapp.com';
+  _apiProducts = 'https://morgan-shop.herokuapp.com'
+  _apiCategories = 'https://morgan-shop.herokuapp.com'
+
   _tableLamps = 'f95e6ae1-a4bd-44d5-917d-7015f6cdd592'
   _floorLamps = '66ef32ef-03ad-48c2-b295-bdfc018b5881'
   _exteriorCeiling = 'f6e7591c-6743-432d-992b-c3bff746848d'

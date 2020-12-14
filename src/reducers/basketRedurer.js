@@ -1,7 +1,10 @@
 const initialState = {
   basketProducts: [],
-  orderTotol: 0,
+  orderTotle: 0,
   quantity: 0,
+  timeStamp: null,
+  id: null,
+  orderSuccess: false
 }
 
 const orderTotolReduce = (basketProducts, price, count = 1) => {
@@ -20,6 +23,25 @@ const orderQuantityReduce = (basketProducts, count = 1) => {
 
 const basketRedurer = (state = initialState, action) => {
   switch (action.type) {
+
+    case 'START_SHOP':
+      return {
+        ...initialState
+      }
+
+    case 'ORDER_PROCESS_REFRESH':
+      return {
+        ...state,
+        orderSuccess: false
+      }
+    
+    case 'SEND_ORDER_PROCESS':
+      return {
+        ...initialState,
+        timeStamp: action.payload.timeStamp,
+        id: action.payload.id,
+        orderSuccess: action.payload.orderSuccess,
+      }
 
     case 'ADD_PRODUCT_TO_BASKET':
       const orderTotle = orderTotolReduce(state.basketProducts, action.payload.price)

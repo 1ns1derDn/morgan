@@ -10,18 +10,24 @@ import icEye from './icon/ic-eye.svg'
 
 import './Login.scss'
 
-const Login = () => (
+const Login = (props) => (
   <section className='Login'>
     <form className='Login-Form'>
       <Title classes='Login-Title' title='LOGIN' />
       <ContainerInput
         title='Email'
-        clazz='Input_ErrorMessage'
+        value={props.email.value}
+        handleBlur={props.handleBlur}
+        handleFocus={props.handleFocus}
+        handleChenge={props.handleChange}
         placeholder='Enter your email'
-        type="email"
-        required
-        touched
-        validate
+        id='email'
+        type={props.email.type}
+        name='email'
+        required={true}
+        validate={props.email.isValidate}
+        errorMessage={props.email.errorMessage}
+        touched={props.email.touched}
       />
       <ContainerInput
         title='Password'

@@ -1,22 +1,23 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import './ButtonBlack.scss'
 
 const ButtonBlack = (props) => {
-  return (
-    <button className={props.classes.join(' ')}>{props.title}</button>
-  )
-}
-
-const ContainerButtonBlack = (props) => {
-
   const classes = ['ButtonBlack']
 
   if (props.clazz) {
     classes.push(props.clazz)
   }
 
-  return <ButtonBlack {...props} classes={classes}/>
+  if(props.buttonIsLink) {
+    return (
+      <Link to={props.to} onClick={props.onClick} className={classes.join(' ')}>{props.title}</Link>
+    )
+  }
+
+  return (
+    <button onClick={props.onClick} className={classes.join(' ')}>{props.title}</button>
+  )
 }
 
-export default ContainerButtonBlack
+export default ButtonBlack

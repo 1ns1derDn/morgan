@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { sortProduct, filterProductsCategories, fetchProducts } from '../../actions/productsActions'
 import { handleToggleOpen, handleSelected } from '../../actions/sortSelectActions'
 import { fetchCategories } from '../../actions/сategoriesActions'
+import { orderProcessRefresh } from '../../actions/basketActions'
 import ProductListCategory from '../Page/ProductListCategory/ProductCategory'
 
 import ContextServiceProducts from '../Context/ContextServiceProducts'
@@ -24,15 +25,13 @@ const ContainerProductListCategory = ({ getProducts }) => {
   const fnHandleSelected = (e, id) => dispatch(handleSelected(e.target.value, id))
   const fnFilterProductsCategories = useCallback((categoryId) => dispatch(filterProductsCategories(categoryId)), [dispatch])
   const fnFetchCategories = useCallback(() => dispatch(fetchCategories(getCategories)()), [getCategories, dispatch])
+  const fnOrderProcessRefresh = useCallback(() => dispatch(orderProcessRefresh()), [dispatch])
 
   useEffect(() => {
     fnFetchCategories()
-  }, [fnFetchCategories])
-
-
-  useEffect(() => {
     fnFetchProducts()
-  }, [fnFetchProducts])
+    fnOrderProcessRefresh()
+  }, [fnFetchCategories, fnFetchProducts, fnOrderProcessRefresh])
 
   useEffect(() => {
     fnSortProducts(sortSelect.value, products.products)

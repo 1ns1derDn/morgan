@@ -26,7 +26,7 @@ const Input = (props) => {
           props.renderButton ? props.renderButton() : null
         }
       </div>
-      <span className='Input-Error'>{!props.validate && props.touched ? props.errorMessage : 'Error'}</span>
+      <span className='Input-Error'>{!props.validate && props.touched ? props.errorMessage : ''}</span>
     </div>
   )
 }

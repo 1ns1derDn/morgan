@@ -23,7 +23,7 @@ const PreviewBasket = (props) => (
         })
       }
     </ul>
-    <ButtonBlack clazz='ButtonBlack_Small' title='GO TO CHECKOUT' />
+    <ButtonBlack buttonIsLink={true} to='/basket' clazz='ButtonBlack_Small' title='GO TO CHECKOUT' />
   </div>
 )
 

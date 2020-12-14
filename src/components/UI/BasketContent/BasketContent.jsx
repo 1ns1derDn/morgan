@@ -29,7 +29,9 @@ const BasketContent = (props) => (
         }
       </ul>
       <div className='BasketContent-Aside'>
-        <OrderSummary basketProducts={props.basketProducts} orderTotle={props.orderTotle}/>
+        <OrderSummary 
+        handleSendOrderProcess={props.handleSendOrderProcess}
+        basketProducts={props.basketProducts} orderTotle={props.orderTotle}/>
       </div>
     </div>
   </>

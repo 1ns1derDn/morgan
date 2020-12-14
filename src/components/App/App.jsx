@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
 import ContainerHome from '../Container/ContainerHome'
-import Login from '../Page/Login/Login'
+import ContainerLogin from '../Container/ContainerLogin'
 import CreateAccount from '../Page/CreateAccount/CreateAccount'
 import ContainerResetPassword from '../Page/ResetPassword/ResetPassword'
 import ContainerBasket from '../Container/ContainerBasket'
@@ -49,9 +49,9 @@ const App = () => {
           />
         </Route>
         <Route path="/login">
-          <Login />
+          <ContainerLogin />
         </Route>
-        <Route path="/card">
+        <Route path="/basket">
           <ContainerBasket />
         </Route>
         <Route path="/create-account">
