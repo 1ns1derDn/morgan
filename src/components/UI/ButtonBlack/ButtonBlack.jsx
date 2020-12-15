@@ -9,14 +9,23 @@ const ButtonBlack = (props) => {
     classes.push(props.clazz)
   }
 
-  if(props.buttonIsLink) {
+  if (props.buttonIsLink) {
     return (
-      <Link to={props.to} onClick={props.onClick} className={classes.join(' ')}>{props.title}</Link>
+      <Link
+        to={props.to}
+        onClick={props.onClick}
+        className={classes.join(' ')}>
+        {props.title}
+      </Link>
     )
   }
 
   return (
-    <button onClick={props.onClick} className={classes.join(' ')}>{props.title}</button>
+    <button
+      onClick={props.onClick}
+      className={classes.join(' ')}>
+      {props.title}
+    </button>
   )
 }
 

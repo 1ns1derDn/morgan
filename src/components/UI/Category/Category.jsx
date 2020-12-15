@@ -8,34 +8,38 @@ import image4 from './image4.jpg'
 
 import './Category.scss'
 
-const Category = ({categories, clazz}) => {
+const Category = ({ categories, clazz }) => {
+
+  const images = [image1, image2, image3, image4]
+
   if (categories.length === 0) {
     return null
   }
   return (
     <div className={clazz ? 'Category ' + clazz : 'Category'}>
-      <div className='Category-Inner'>
-        <Link
-          to='/table-lamps' className='Category-Item Category-Item1'>
-          <img src={image1} alt={categories[0].title} />
-          <h3 className='Category-Title Category-Title_White'>{categories[0].title}</h3>
-        </Link>
-        <Link
-          to='/floor-lamps' className='Category-Item Category-Item2'>
-          <img src={image2} alt={categories[1].title} />
-          <h3 className='Category-Title'>{categories[1].title}</h3>
-        </Link>
-        <Link
-          to='/exterior-ceiling' className='Category-Item Category-Item3'>
-          <img src={image3} alt={categories[2].title} />
-          <h3 className='Category-Title'>{categories[2].title}</h3>
-        </Link>
-        <Link
-          to='/interior-ceiling' className='Category-Item Category-Item4'>
-          <img src={image4} alt={categories[3].title} />
-          <h3 className='Category-Title'>{categories[3].title}</h3>
-        </Link>
-      </div>
+      <ul className='Category-Inner'>
+        {
+          categories.map((category, index) => {
+
+            let classes = 'Category-Title'
+
+            if(index === 0) {
+              classes += ' Category-Title_White' 
+            }
+            return (
+              <li className={`Category-Item Category-Item${index + 1}`}>
+                <Link
+                  to={'/' + category.alias}
+                  >
+                  <img src={images[index]} alt={category.title}
+                  />
+                  <h3 className={classes}>{category.title}</h3>
+                </Link>
+              </li>
+            )
+          })
+        }
+      </ul>
     </div >
   )
 }

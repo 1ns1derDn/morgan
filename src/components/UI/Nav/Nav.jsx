@@ -4,7 +4,7 @@ import Burger from '../Burger/Burger'
 
 import './Nav.scss'
 
-const Nav = (props) => (
+const Nav = () => (
   <nav className='Nav'>
     <Burger />
     <div className='Nav-Wrapper'>

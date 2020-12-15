@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Title from '../../UI/Title/Title'
-import ContainerInput from '../../UI/Input/ContainerInput'
+import Input from '../../UI/Input/Input'
 import ButtonBlack from '../../UI/ButtonBlack/ButtonBlack'
 import LinkSend from '../../UI/LinkSend/LinkSend'
 import RowContainer from '../../helpers/RowContainer/RowContainer'
@@ -13,7 +13,7 @@ const ResetPassword = () => (
     <div className='Container'>
       <div className='ResetPassword-Inner'>
         <form className='ContainerForm'>
-          <Title classes='ResetPassword-Title' title='RESET YOUR PASSWORD' />
+          <Title clazz='ResetPassword-Title' title='RESET YOUR PASSWORD' />
           <div className='ResetPassword-Text'>
             <p >
               Enter the email address for your Morgan account and we’ll send a single-use password reset link.
@@ -22,7 +22,7 @@ const ResetPassword = () => (
               This link will expire after 24 hours.
             </p>
           </div>
-          <ContainerInput
+          <Input
             title='Email'
             clazz='Input_ErrorMessage ResetPassword-Input'
             placeholder='Enter your email'

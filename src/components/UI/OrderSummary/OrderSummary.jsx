@@ -15,12 +15,12 @@ const OrderSummary = (props) => {
         {
           props.basketProducts.map((product) => {
             return (
-              <li className='OrderSummary-Item'>
+              <li key={product.id} className='OrderSummary-Item'>
                 <span className='OrderSummary-ItemName'>
                   {product.name}
                 </span>
                 <span className='OrderSummary-ItemPrice'>
-                  {product.price}
+                  £{product.totle}.00
                 </span>
               </li>
             )
@@ -40,10 +40,14 @@ const OrderSummary = (props) => {
           Estimated Total
         </span>
         <span className='OrderSummary-Total'>
-          {props.orderTotle}
+          £{props.orderTotle}.00
         </span>
       </div>
-      <ButtonBlack onClick={ () => props.handleSendOrderProcess(new Date(), orderId, true)} clazz='OrderSummary-Button ButtonBlack_Small' title='CHECKOUT' />
+      <ButtonBlack
+        title='CHECKOUT'
+        clazz='OrderSummary-Button ButtonBlack_Small'
+        onClick={() => props.handleSendOrderProcess(new Date(), orderId, true)}
+      />
     </div>
   )
 }

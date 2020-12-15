@@ -1,5 +1,4 @@
 @import '../../../Variables.scss';
-
 .Category {
   &-Inner {
     display: grid;
@@ -13,6 +12,9 @@
   }
   &-Item {
     position: relative;
+    a {
+      width: 100%;
+    }
     img {
       width: 100%;
     }
@@ -43,26 +45,3 @@
     grid-area: CategoryItem4;
   }
 }
-
-@media(max-width: 767px) {
-  .Category-Inner {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-    "CategoryItem1 CategoryItem1"
-    "CategoryItem3 CategoryItem2"
-    "CategoryItem4 CategoryItem2";
-  }
-  .Category-Item2 {
-    position: relative;
-    overflow: hidden;
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate3d(-50%, -50%, 0);
-      width: 160%;
-    }
-  }
-}
-

@@ -1,6 +1,43 @@
+@import '../../../Variables.scss';
 .Home {
   padding: 16px 0 24px;
-  &-Category {
-    padding-bottom: 32px;
+}
+
+@media(max-width: 767px) {
+  .Home-Category {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $grey;
+    .Category-Inner {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas:
+      "CategoryItem1 CategoryItem1"
+      "CategoryItem3 CategoryItem2"
+      "CategoryItem4 CategoryItem2";
+    }
+    .Category-Title {
+      top: 6px;
+      left: 12px;
+      font-size: 12px;
+      line-height: 22px;
+    }
+    .Category-Item3,
+    .Category-Item4 {
+      .Category-Title {
+        top: auto;
+        bottom: 8px;
+      }
+    }
+    .Category-Item2 {
+      position: relative;
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        width: 160%;
+      }
+    }
   }
 }

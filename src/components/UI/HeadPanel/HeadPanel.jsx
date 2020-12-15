@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 
 import ButtonSearch from '../ButtonSearch/ButtonSearch'
 import LoginUserIcon from '../LoginUserIcon/LoginUserIcon'
@@ -12,7 +11,6 @@ import './HeadPanel.scss'
 const HeadPanel = (props) => {
 
   let previewBasket = null;
-
   if (props.basketProducts.length > 0) {
     previewBasket = (
       <PreviewBasket
@@ -49,14 +47,5 @@ const HeadPanel = (props) => {
   )
 }
 
-const ContainerHeadPanel = () => {
-  const basketProducts = useSelector(state => state.basket.basketProducts)
-  const quantity = useSelector(state => state.basket.quantity)
-  return <HeadPanel
-    quantity={quantity}
-    basketProducts={basketProducts}
 
-  />
-}
-
-export default ContainerHeadPanel
+export default HeadPanel

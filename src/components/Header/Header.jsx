@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '../UI/Logo/Logo'
 import Nav from '../UI/Nav/Nav'
-import HeadPanel from '../UI/HeadPanel/HeadPanel'
+import ContainerHeadPanel from '../Container/ContainerHeadPanel'
 
 import './Header.scss'
 
@@ -11,7 +11,7 @@ const Header = (props) => (
       <div className='Header-Inner'>
         <Logo/>
         <Nav />
-        <HeadPanel />
+        <ContainerHeadPanel />
       </div>
     </div>
   </header>

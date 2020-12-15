@@ -3,17 +3,17 @@ import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header'
 import ContainerHome from '../Container/ContainerHome'
 import ContainerLogin from '../Container/ContainerLogin'
-import CreateAccount from '../Page/CreateAccount/CreateAccount'
+import Registration from '../Page/Registration/Registration'
 import ContainerResetPassword from '../Page/ResetPassword/ResetPassword'
 import ContainerBasket from '../Container/ContainerBasket'
 import NotFound from '../Page/NotFound/NotFound'
-import './App.scss'
 
 import ContextServiceProducts from '../Context/ContextServiceProducts'
-import ContainerProductListCategory from '../Container/ProductListCategory'
+import ContainerProductListCategory from '../Container/ContainerProductListCategory'
+
+import './App.scss'
 
 const App = () => {
-
   const {
     getProductsTableLamps,
     getProductsFloorLamps,
@@ -54,8 +54,8 @@ const App = () => {
         <Route path="/basket">
           <ContainerBasket />
         </Route>
-        <Route path="/create-account">
-          <CreateAccount />
+        <Route path="/registration">
+          <Registration />
         </Route>
         <Route path="/reset-password">
           <ContainerResetPassword />

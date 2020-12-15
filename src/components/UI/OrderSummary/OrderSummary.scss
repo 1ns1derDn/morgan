@@ -1,5 +1,7 @@
 @import '../../../Variables.scss';
 .OrderSummary {
+  position: sticky;
+  top: 20px;
   max-width: 272px;
   width: 100%;
   padding: 8px 12px;
@@ -16,7 +18,9 @@
     color: $DarkGray;
   }
   &-List {
+    max-height: 150px;
     margin-bottom: 18px;
+    overflow-y: auto;
   }
   &-Item {
     display: flex;

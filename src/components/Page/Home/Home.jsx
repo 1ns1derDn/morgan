@@ -1,6 +1,6 @@
 import React from 'react'
 import Category from '../../UI/Category/Category'
-import ContainerProductListCategory from '../../Container/ProductListCategory'
+import ContainerProductListCategory from '../../Container/ContainerProductListCategory'
 import './Home.scss'
 
 const Home = (props) => (
@@ -8,12 +8,14 @@ const Home = (props) => (
     <div className='Container'>
       <div className='Home-Inner'>
         <Category
+          clazz='Home-Category'
           fnHandleSelectedCategory={props.fnHandleSelectedCategory}
-          categories={props.categories}
-          clazz='Home-Category' />
+          categories={props.categories} />
       </div>
     </div>
-    <ContainerProductListCategory getProducts={props.getProducts}/>
+    <ContainerProductListCategory
+
+      getProducts={props.getProducts} />
   </div>
 )
 

@@ -9,3 +9,79 @@
     margin-bottom: 16px;
   }
 }
+
+@media(max-width: 1185px) {
+  .ProductList-Item {
+    flex-basis: calc(33.3333% - 16px);
+  }
+  .ProductList-Product {
+    max-width: 100%;
+    .Product-Image {
+      width: 100%;
+    }
+  }
+}
+
+@media(max-width: 850px) {
+  .ProductList-Item {
+    flex-basis: calc(50% - 16px);
+  }
+}
+
+@media(max-width: 767px) {
+  .ProductList {
+    margin-left: -8px;
+  }
+  .ProductList-Item {
+    flex-basis: calc(50% - 8px);
+    margin-left: 8px;
+    margin-bottom: 8px;
+  }
+  .ProductList-Product {
+    .Product-Price {
+      font-size: 10px;
+      line-height: 16px;
+    }
+    .Product-Name {
+      font-size: 10px;
+      line-height: 16px;
+    }
+  }
+}
+
+@media(max-width: 620px) {
+  .ProductList-Product {
+    max-width: 100%;
+    .Product-Image {
+      height: 218px;
+      img {
+        width: 270px;
+      }
+    }
+    .Product-Box {
+      padding: 8px;
+    }
+  }
+}
+
+@media(max-width: 560px) {
+  .ProductList-Product {
+    .Product-Image {
+      height: 185px;
+      img {
+        width: 255px;
+      }
+    }
+  }
+}
+
+@media(max-width: 440px) {
+  .ProductList-Product {
+    .Product-Image {
+      height: 150px;
+      img {
+        width: 200px;
+      }
+    }
+  }
+}

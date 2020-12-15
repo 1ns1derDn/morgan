@@ -1,6 +1,6 @@
 @import '../../../Variables.scss';
 
-.BasketItem {
+.BasketProduct {
   display: flex;
   max-width: 655px;
   max-height: 185px;
@@ -68,32 +68,36 @@
     color: $black;
   }
   &-PriceQuantity {
+    display: none;
     color: $DarkGray;
   }
-  &.BasketItem_CardItem {
+  &.BasketProduct_CardProduct {
     max-width: 248px;
     max-height: 76px;
-    .BasketItem-Content {
+    .BasketProduct-PriceQuantity {
+      display: block;
+    }
+    .BasketProduct-Content {
       padding-bottom: 6px;
     }
-    .BasketItem-Name {
+    .BasketProduct-Name {
       font-size: 12px;
       line-height: 22px;
     }
-    .BasketItem-Image {
+    .BasketProduct-Image {
       max-width: 68px;
       margin-right: 16px;
     }
-    .BasketItem-Top {
+    .BasketProduct-Top {
       display: none;
     }
-    .BasketItem-Control {
+    .BasketProduct-Control {
       display: none;
     }
-    .BasketItem-Title {
+    .BasketProduct-Title {
       display: none;
     }
-    .BasketItem-Price {
+    .BasketProduct-Price {
       font-size: 14px;
       line-height: 21px;
     }

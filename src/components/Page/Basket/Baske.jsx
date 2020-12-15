@@ -36,7 +36,7 @@ const Basket = (props) => {
       <div className='Container'>
         <BasketContent
           handleSendOrderProcess={props.handleSendOrderProcess}
-          {...props} orderTotle={props.orderTotle} classes='Basket-Title' />
+          {...props} orderTotle={props.orderTotle} clazzTitle='Basket-Title' />
       </div>
     </div>
   )

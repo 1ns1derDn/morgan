@@ -11,6 +11,7 @@
   &-HeadSelect {
     position: relative;
     height: 100%;
+    cursor: pointer;
     &::before {
       content: '';
       position: absolute;
@@ -23,15 +24,15 @@
     } 
   }
   &-HeadInput {
-    height: 100%;
     cursor: pointer;
+    height: 100%;
     margin-left: 12px;
     background-color: transparent;
     border: none;
   }
   &-Drop {
     position: absolute;
-    top: 0;
+    top: -1px;
     left: 0;
     z-index: 10;
     display: none;

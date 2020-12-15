@@ -5,13 +5,20 @@ import addIcon from './icon/add.svg'
 import remove from './icon/remove.svg'
 
 import './Product.scss'
-
 const Product = (props) => (
-  <div className='Product'>
+  <div className={props.clazz ? 'Product ' + props.clazz : 'Product'}>
     {
       props.isBasket ?
-        <ButtonIcon onClick={props.handleAllRemoveProductFromBasket} clazz='Product-Button' img={remove} alt='Remove item' /> :
-        <ButtonIcon onClick={props.handleAddProductToBasket} clazz='Product-Button' img={addIcon} alt='Add item' />
+        <ButtonIcon
+          onClick={props.handleAllRemoveProductFromBasket}
+          clazz='Product-Button'
+          img={remove}
+          alt='Remove item' /> :
+        <ButtonIcon
+          onClick={props.handleAddProductToBasket}
+          clazz='Product-Button'
+          img={addIcon}
+          alt='Add item' />
     }
     <div className='Product-Image'>
       <img src={props.image} alt={props.alt} />
@@ -21,7 +28,7 @@ const Product = (props) => (
         {props.name}
       </h3>
       <span className='Product-Price'>
-        {props.price}
+        £{props.price}.00
       </span>
     </div>
   </div>

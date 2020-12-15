@@ -8,14 +8,12 @@ import Home from '../Page/Home/Home'
 
 const ContainerHome = () => {
 
-  const { getProducts } = useContext(ContextServiceProducts)
-
   const dispatch = useDispatch()
+  const { getProducts } = useContext(ContextServiceProducts)
 
   const products = useSelector(state => state.products)
   const categories = useSelector(state => state.categories.categories)
   const sortSelect = useSelector(state => state.sortSelect)
-
   const fnSortProducts = useCallback((type, products) => dispatch(sortProduct(type, products)), [dispatch])
   const fnHandleSelectedCategory = (categoryId) => dispatch(handleSelectedCategory(categoryId)())
 

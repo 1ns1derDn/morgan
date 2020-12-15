@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import logo from './icon/logo.svg'
 import './Logo.scss'
 
-const Logo = (props) => (
+const Logo = () => (
   <Link className='Logo' to='/'>
     <img className='Logo-Icon' src={logo} alt='logotype' />
   </Link>

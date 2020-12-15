@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ContainerInput from '../../UI/Input/ContainerInput'
+import Input from '../../UI/Input/Input'
 import ButtonBlack from '../../UI/ButtonBlack/ButtonBlack'
 import WithSocial from '../../UI/WithSocial/WithSocial'
 import Title from '../../UI/Title/Title'
@@ -13,8 +13,8 @@ import './Login.scss'
 const Login = (props) => (
   <section className='Login'>
     <form className='Login-Form'>
-      <Title classes='Login-Title' title='LOGIN' />
-      <ContainerInput
+      <Title clazz='Login-Title' title='LOGIN' />
+      <Input
         title='Email'
         value={props.email.value}
         handleBlur={props.handleBlur}
@@ -29,7 +29,7 @@ const Login = (props) => (
         errorMessage={props.email.errorMessage}
         touched={props.email.touched}
       />
-      <ContainerInput
+      <Input
         title='Password'
         clazz='Input_ErrorMessage'
         placeholder='Enter your password'
@@ -50,7 +50,7 @@ const Login = (props) => (
       <RowContainer
         classes='Login-RowContainer'
         left={<Link to='/' className='Link'>Don't have an account?</Link>}
-        right={<Link to='/create-account' className='Link Link_underline'>Create an account</Link>}
+        right={<Link to='/registration' className='Link Link_underline'>Create an account</Link>}
       />
       <WithSocial />
     </form>

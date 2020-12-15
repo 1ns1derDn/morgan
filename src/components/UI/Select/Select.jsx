@@ -16,7 +16,7 @@ const Select = ({ select, clazz, handleToggleOpen, handleSelected }) => {
   let classes = 'Select'
 
   if (clazz) {
-    classes += clazz
+    classes += ` ${clazz}`
   }
 
   if (select.isOpen) {
@@ -49,7 +49,5 @@ const Select = ({ select, clazz, handleToggleOpen, handleSelected }) => {
     </div>
   )
 }
-
-
 
 export default Select

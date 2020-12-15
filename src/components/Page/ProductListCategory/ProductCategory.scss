@@ -1,0 +1,24 @@
+.ProductCategory {
+  padding-top: 32px;
+}
+
+@media(max-width: 767px) {
+  .ProductCategory {
+    padding-top: 12px;
+  }
+  .ProductCategory-Select {
+    .Select-HeadSelect {
+      font-size: 12px;
+      line-height: 22px;
+    }
+    .Select-HeadInput {
+      margin-left: 8px;
+      font-size: 12px;
+      line-height: 22px;
+      padding: 0;
+    }
+    .Select-Input {
+      padding: 5px 8px 5px;
+    }
+  }
+}

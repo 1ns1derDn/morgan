@@ -7,7 +7,7 @@ import './BasketEmpty.scss'
 
 const BasketEmpty = () => (
   <div className='BasketEmpty'>
-    <Title classes='BasketEmpty-Title' title='BASKET' />
+    <Title clazz='BasketEmpty-Title' title='BASKET' />
     <div className='BasketEmpty-Icon'>
       <img src={lamp} alt="lamp" />
     </div>
@@ -16,7 +16,11 @@ const BasketEmpty = () => (
         Your basket is empty
       </p>
     </div>
-    <ButtonBlack buttonIsLink to='/' title='START SHOPPING'/>
+    <ButtonBlack
+      to='/'
+      title='START SHOPPING'
+      buttonIsLink
+    />
   </div>
 )
 

@@ -3,8 +3,18 @@ import React from 'react'
 import './Input.scss'
 
 const Input = (props) => {
+  const classes = ['Input']
+
+  if (props.clazz) {
+    classes.push(props.clazz)
+  }
+
+  if (!props.validate && props.touched) {
+    classes.push('Input_ErrorMessage')
+  }
+
   return (
-    <div className={props.classes.join(' ')} htmlFor={props.id}>
+    <div className={classes.join(' ')} htmlFor={props.id}>
       <div className='Input-Top'>
         <span className='Input-Name'>{props.title}</span>
         {

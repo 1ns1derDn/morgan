@@ -7,4 +7,13 @@
   padding: 12px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
   background-color: #fafafa;
+  &-Product {
+    & + .PreviewBasket-Product {
+      margin-top: 5px;
+    }
+  }
+  &-List {
+    height: 186px;
+    overflow-y: auto;
+  }
 }
