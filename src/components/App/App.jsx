@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Header from '../Header/Header'
+import ContainerHeader from '../Container/ContainerHeader'
 import ContainerHome from '../Container/ContainerHome'
 import ContainerLogin from '../Container/ContainerLogin'
 import Registration from '../Page/Registration/Registration'
@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <ContainerHeader />
       <Switch>
         <Route path="/" exact>
           <ContainerHome />

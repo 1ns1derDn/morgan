@@ -15,6 +15,13 @@
       "CategoryItem3 CategoryItem2"
       "CategoryItem4 CategoryItem2";
     }
+    .Category-Item {
+      a {
+        img {
+          height: 100%;
+        }
+      }
+    }
     .Category-Title {
       top: 6px;
       left: 12px;

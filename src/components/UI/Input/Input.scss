@@ -67,3 +67,36 @@
     } 
   }
 }
+
+
+@media(max-width: 767px) {
+  .Input {
+    height: 76px;
+    &-Name {
+      font-size: 12px;
+      line-height: 22px;
+    }
+    &-Link {
+      font-size: 10px;
+      line-height: 15px;
+    }
+    &-Inp {
+      height: 36px;
+      font-size: 12px;
+      line-height: 22px;
+      &::placeholder {
+        font-size: 12px;
+        line-height: 22px;
+      }
+    }
+    &-Box {
+      height: 36px;
+    }
+    &-Error {
+      margin-top: 0;
+      font-size: 10px;
+      line-height: 16px;
+      height: 16px;
+    }
+  }
+}

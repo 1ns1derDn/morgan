@@ -20,9 +20,15 @@
   &.Header_MenuOpen {
     .Nav {
       &-Wrapper {
-        transform: translateX(0);
+        transform: translateY(0);
         transition: .3s ease;
       }
+    }
+    .HeadPanel-ItemMobile {
+      display: none;
+    }
+    .ButtonSearch {
+      display: block;
     }
     .Burger {
       .Burger-Line {
@@ -43,6 +49,16 @@
 @media(max-width: 1024px) {
   .Header {
     position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+    }
     .Nav {
       position: static;
       order: 1;
@@ -52,10 +68,12 @@
         position: absolute;
         top: 64px;
         left: 0;
+        z-index: 2;
         width: 100%;
         height: calc(100vh - 64px);
         padding: 0 12px;
-        transform: translateX(-100%);
+        background-color: $white;
+        transform: translateY(-100%);
       }
       &-Title {
         display: block;
@@ -90,6 +108,43 @@
     .HeadPanel-Link {
       width: 40px;
       padding: 0 15px;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .Header {
+    &-Inner {
+      height: 48px;
+    }
+    .HeadPanel-Link,
+    .ButtonSearch {
+      width: 31px;
+      height: 48px;
+    }
+    .Nav {
+      &-Wrapper {
+        top: 48px;
+      }
+      &-Link {
+        height: 38px;
+        font-size: 12px;
+        line-height: 22px;
+      }
+      &-Title {
+        font-size: 12px;
+        line-height: 22px;
+        margin-bottom: 0px;
+      }
+    }
+    .CardIcon-Count {
+      left: 70%;
+    }
+    .Logo {
+      img {
+        width: 28px;
+        height: 28px;
+      }
     }
   }
 }

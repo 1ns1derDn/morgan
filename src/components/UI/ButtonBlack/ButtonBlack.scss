@@ -13,7 +13,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  color: $while;
+  color: $white;
   background-color: $black;
   border: none;
   cursor: pointer;
@@ -22,5 +22,13 @@
     font-size: 12px;
     line-height: 22px;
     letter-spacing: 0.01em;
+  }
+}
+
+@media(max-width: 767px) {
+  .ButtonBlack {
+    height: 34px;
+    font-size: 12px;
+    line-height: 22px;
   }
 }

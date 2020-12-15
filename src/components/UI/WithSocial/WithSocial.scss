@@ -26,5 +26,34 @@
   &-Button {
     display: flex;
     justify-content: space-between;
+    .ButtonWhite {
+      width: 100%;
+      & + .ButtonWhite {
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .WithSocial {
+    &-Line {
+      margin-bottom: 12px;
+    }
+    span {
+      font-size: 10px;
+      line-height: 16px;
+    }
+    &-Button {
+      .ButtonWhite-Title {
+        display: none;
+      }
+      .ButtonWhite {
+        width: 100%;
+        & + .ButtonWhite {
+          margin-left: 8px;
+        }
+      }
+    }
   }
 }

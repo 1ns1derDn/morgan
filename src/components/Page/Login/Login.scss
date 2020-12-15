@@ -1,8 +1,10 @@
 @import '../../../Variables.scss';
 .Login {
-  display: flex;
-  justify-content: center;
   padding-top: 50px;
+  &-Inner {
+    display: flex;
+    justify-content: center;
+  }
   &-Title {
     margin-bottom: 26px;
   }
@@ -16,5 +18,24 @@
   &-Button {
     margin-top: 13px;
     margin-bottom: 18px;
+  }
+}
+
+
+@media(max-width: 767px) {
+  .Login {
+    padding-top: 24px;
+    &-Button {
+      margin-bottom: 24px;
+      margin-bottom: 9px;
+    }
+    &-Title {
+      margin-bottom: 18px;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    &-RowContainer {
+      margin-bottom: 15px;
+    }
   }
 }

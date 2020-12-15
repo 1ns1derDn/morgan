@@ -19,3 +19,26 @@
     margin-bottom: 20px;
   }
 }
+
+@media(max-width: 767px) {
+  .CreateAccount {
+    padding-top: 24px;
+    &-Title {
+      margin-bottom: 18px;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    &-Text {
+      margin-bottom: 8px;
+      font-size: 10px;
+      line-height: 16px;
+    }
+    &-Button {
+      margin-bottom: 9px;
+    }
+    &-RowContainer {
+      margin-bottom: 15px;
+    }
+  }
+
+}

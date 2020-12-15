@@ -1,5 +1,7 @@
 @import '../../../Variables.scss';
 .HeadPanel {
+  position: relative;
+  z-index: 3;
   display: flex;
   &-Item {
     position: relative;
@@ -44,5 +46,11 @@
       top: -20px;
       left: 0;
     }
+  }
+}
+
+@media(max-width: 767px) {
+  .HeadPanel-PreviewBasket {
+    display: none;
   }
 }

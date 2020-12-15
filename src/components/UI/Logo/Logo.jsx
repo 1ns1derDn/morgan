@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import logo from './icon/logo.svg'
 import './Logo.scss'
 
-const Logo = () => (
-  <Link className='Logo' to='/'>
+const Logo = (props) => (
+  <Link onClick={props.handleCloseMenu} className='Logo' to='/'>
     <img className='Logo-Icon' src={logo} alt='logotype' />
   </Link>
 )

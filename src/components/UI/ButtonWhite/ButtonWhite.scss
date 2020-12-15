@@ -3,9 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 176px;
   height: 48px;
-  padding: 0 20px;
+  padding: 0 15px;
   border: 1px solid $grey;
   background-color: transparent;
   cursor: pointer;
@@ -14,5 +13,13 @@
     line-height: 21px;
     color: $black;
     margin-left: 8px;
+  }
+}
+
+@media(max-width: 767px) {
+  .ButtonWhite  {
+    height: 34px;
+    font-size: 12px;
+    line-height: 22px;
   }
 }

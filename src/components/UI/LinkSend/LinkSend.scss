@@ -33,3 +33,31 @@
     color: $black;
   }
 }
+
+@media(max-width: 767px) {
+  .LinkSend {
+    padding-top: 24px;
+    &-Title {
+      margin-bottom: 12px;
+      font-size: 12px;
+      line-height: 22px;
+    }
+    &-Icon {
+      margin-bottom: 24px;
+      img {
+        width: 68px;
+        height: 54px;
+      }
+    }
+    &-Text {
+      font-size: 10px;
+      line-height: 16px;
+    }
+    &-Email {
+      margin-top: 6px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      line-height: 22px;
+    }
+  }
+}

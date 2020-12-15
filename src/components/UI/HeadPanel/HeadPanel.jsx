@@ -24,16 +24,18 @@ const HeadPanel = (props) => {
       <li className='HeadPanel-Item'>
         <ButtonSearch />
       </li>
-      <li className='HeadPanel-Item'>
+      <li className='HeadPanel-Item HeadPanel-ItemMobile'>
         <NavLink
+          onClick={props.handleCloseMenu}
           className='HeadPanel-Link'
           activeClassName="HeadPanel-Link_Active"
           to='/login'>
           <LoginUserIcon />
         </NavLink>
       </li>
-      <li className='HeadPanel-Item'>
+      <li className='HeadPanel-Item HeadPanel-ItemMobile'>
         <NavLink
+                  onClick={props.handleCloseMenu}
           className='HeadPanel-Link'
           activeClassName="HeadPanel-Link_Active"
           to='/basket'>

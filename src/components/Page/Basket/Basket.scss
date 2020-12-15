@@ -14,7 +14,47 @@
 }
 
 @media(max-width: 767px) {
-  .Basket-Title {
+  .Basket {
+    padding-top: 16px;
+    &-Title {
+      margin-bottom: 12px;
+    }
+    .BasketEmpty-Title {
+      margin-bottom: 12px;
+      font-size: 12px;
+      line-height: 22px;
+    }
+    .BasketEmpty-Icon {
+      img {
+        width: 34px;
+        height: 54px;
+      }
+    }
+    .BasketEmpty-Text {
+      margin-bottom: 16px;
+      font-size: 12px;
+      line-height: 22px;
+    }
+  }
+  .OrderSuccess-Title {
     margin-bottom: 12px;
+  }
+  .OrderSuccess-Icon {
+    img {
+      width: 58px;
+      height: 66px;
+    }
+  }
+  .OrderSuccess-Text {
+    margin-bottom: 14px;
+    font-size: 12px;
+    line-height: 22px;
+    p + p {
+      margin-top: 4px;
+    }
+    span {
+      font-size: 12px;
+      line-height: 22px;
+    }
   }
 }

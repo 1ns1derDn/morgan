@@ -45,11 +45,10 @@ const ResetPassword = () => (
 const ContainerResetPassword = () => {
 
   if (true) {
-    return <LinkSend email='yourmail398@gmail.com' />
+    return <LinkSend email='yourmail398@gmail.com' /> 
   }
 
   return <ResetPassword />
-
 }
 
 export default ContainerResetPassword

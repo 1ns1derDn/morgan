@@ -10,7 +10,7 @@ const LinkSend = (props) => (
     <div className="Container">
       <div className="LinkSend-Inner">
         <div className='LinkSend-Box'>
-          <Title classes='LinkSend-Title' title='YOUR LINK HAS BEEN SENT' />
+          <Title clazz='LinkSend-Title' title='YOUR LINK HAS BEEN SENT' />
           <div className='LinkSend-Icon'>
             <img src={send} alt='icon send' />
           </div>

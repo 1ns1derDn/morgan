@@ -1,12 +1,15 @@
 @import '../../../Variables.scss';
 
 .NotFound {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding-top: 100px;
+  &-Inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &-Box {
     max-width: 438px;
+    width: 100%;
     text-align: center;
   }
   &-Image {
@@ -20,7 +23,27 @@
     color: $black;
   }
   &-Button {
+    max-width: 320px;
+    width: 100%;
     margin: 0 auto;
-    max-width: 256px;
+    .ButtonWhite-Title {
+      margin-left: 0;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .NotFound {
+    padding-top: 41px;
+    &-Image {
+      img {
+        width: 144px;
+        height: 89px;
+      }
+    }
+    &-Text {
+      font-size: 10px;
+      line-height: 16px;
+    }
   }
 }
