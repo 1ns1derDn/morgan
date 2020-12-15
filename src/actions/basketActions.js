@@ -17,7 +17,7 @@ export const removeProductFromBasket = (product) => ({
   payload: product
 })
 
-export const AllRemoveProductFromBasket = (product) => ({
+export const allRemoveProductFromBasket = (product) => ({
   type: 'All_REMOVE_PRODUCT_FROM_BASKET',
   payload: product
 })

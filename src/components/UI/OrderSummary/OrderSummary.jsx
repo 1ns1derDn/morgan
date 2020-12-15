@@ -9,7 +9,7 @@ const OrderSummary = (props) => {
   const orderId = nextId(844253425);
 
   return (
-    <div className='OrderSummary'>
+    <div className={props.clazz ? 'OrderSummary ' + props.clazz : 'OrderSummary'}>
       <h3 className='OrderSummary-Title'>Order Summary</h3>
       <ul className='OrderSummary-List'>
         {

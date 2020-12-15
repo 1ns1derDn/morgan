@@ -1,6 +1,7 @@
 import React from 'react'
 import ButtonBlack from '../ButtonBlack/ButtonBlack'
 import BasketProduct from '../BasketProduct/BasketProduct'
+import { API_CATEGORIES } from '../../../services/serviceLampVariables'
 import './PreviewBasket.scss'
 
 const PreviewBasket = (props) => (
@@ -16,7 +17,7 @@ const PreviewBasket = (props) => (
                 category={product.category}
                 name={product.name}
                 quantity={product.count}
-                img={product.image}
+                img={`${API_CATEGORIES}${product.image}`}
                 alt={product.name} />
             </li>
           )

@@ -17,14 +17,19 @@ const BasketProduct = (props) => {
         <div className='BasketProduct-Wrapper'>
           <div className='BasketProduct-Top'>
             <span className='BasketProduct-Title'>{props.category}</span>
-            <ButtonIcon img={icClose} alt='delete all item' />
+            <ButtonIcon
+              img={icClose}
+              alt='delete all item'
+              clazz='BasketProduct-RemoveAll'
+              onClick={props.handleAllRemoveProductFromBasket}
+            />
           </div>
           <h3 className='BasketProduct-Name'>
             {props.name}
           </h3>
         </div>
         <div className='BasketProduct-Wrapper'>
-          <span className='BasketProduct-Title'>
+          <span className='BasketProduct-Title BasketProduct-TitleQuantity'>
             Quantity
           </span>
           <div className='BasketProduct-Bottom'>

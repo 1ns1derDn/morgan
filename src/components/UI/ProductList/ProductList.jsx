@@ -1,5 +1,6 @@
 import React from 'react'
 import Product from '../Product/Product'
+import { API_CATEGORIES } from '../../../services/serviceLampVariables'
 
 import './ProductList.scss'
 
@@ -19,7 +20,7 @@ const ProductList = (props) => {
                 clazz='ProductList-Product'
                 name={product.name}
                 price={product.price}
-                image={product.image}
+                image={`${API_CATEGORIES}${product.image}`}
                 alt={product.name}
                 isBasket={isBasket}
                 handleAddProductToBasket={

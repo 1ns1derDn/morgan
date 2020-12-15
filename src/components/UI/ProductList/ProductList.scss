@@ -29,6 +29,7 @@
 }
 
 @media(max-width: 767px) {
+  
   .ProductList {
     margin-left: -8px;
   }
@@ -46,6 +47,10 @@
       font-size: 10px;
       line-height: 16px;
     }
+    .Product-Button {
+      top: 8px;
+      right: 8px;
+    }
   }
 }
 
@@ -55,7 +60,7 @@
     .Product-Image {
       height: 218px;
       img {
-        width: 270px;
+        width: 215px;
       }
     }
     .Product-Box {
@@ -69,7 +74,7 @@
     .Product-Image {
       height: 185px;
       img {
-        width: 255px;
+        width: 180px;
       }
     }
   }
@@ -80,7 +85,7 @@
     .Product-Image {
       height: 150px;
       img {
-        width: 200px;
+        width: 150px;
       }
     }
   }

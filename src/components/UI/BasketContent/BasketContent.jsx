@@ -3,6 +3,7 @@ import './BasketContent.scss'
 import Title from '../Title/Title';
 import OrderSummary from '../OrderSummary/OrderSummary'
 import BasketProduct from '../BasketProduct/BasketProduct'
+import { API_CATEGORIES } from '../../../services/serviceLampVariables'
 
 const BasketContent = (props) => (
   <>
@@ -18,12 +19,15 @@ const BasketContent = (props) => (
                   category={product.category}
                   name={product.name}
                   quantity={product.count}
-                  img={product.image}
+                  img={`${API_CATEGORIES}${product.image}`}
                   alt={product.alias}
                   handleAddProductToBasket={
                     () => props.handleAddProductToBasket(product, true)}
                   handleRemoveProductFromBasket={
                     () => { props.handleRemoveProductFromBasket(product) }}
+                  handleAllRemoveProductFromBasket={
+                    () => { props.handleAllRemoveProductFromBasket(product) }
+                  }
                 />
               </li>
             )
@@ -32,6 +36,7 @@ const BasketContent = (props) => (
       </ul>
       <div className='BasketContent-Aside'>
         <OrderSummary
+          clazz='BasketContent-OrderSummary'
           orderTotle={props.orderTotle}
           handleSendOrderProcess={props.handleSendOrderProcess}
           basketProducts={props.basketProducts} />
