@@ -23,11 +23,11 @@ const Registration = (props) => {
   } = props
 
   return (
-    <section className='CreateAccount'>
+    <section className='Registration'>
       <div className='Container'>
-        <div className='CreateAccount-Inner'>
+        <div className='Registration-Inner'>
           <form className='ContainerForm' onSubmit={(e) => handleSubmit(e)}>
-            <Title clazz='CreateAccount-Title' title='CREATE AN ACCOUNT' />
+            <Title clazz='Registration-Title' title='CREATE AN ACCOUNT' />
             <Input
               title='Full name'
               value={userFullName.value}
@@ -69,14 +69,14 @@ const Registration = (props) => {
               validate={password.isValidate}
               errorMessage={password.errorMessage}
               touched={password.touched} />
-            <div className='CreateAccount-Text'>
+            <div className='Registration-Text'>
               <p>
                 By creating an account you agree to the website terms and conditions and our privacy notice.
               </p>
             </div>
-            <ButtonBlack clazz='CreateAccount-Button' title='CREATE AN ACCOUNT' />
+            <ButtonBlack clazz='Registration-Button' title='CREATE AN ACCOUNT' />
             <RowContainer
-              classes='CreateAccount-RowContainer'
+              classes='Registration-RowContainer'
               left={<Link to='/' className='Link'>Have an account?</Link>}
               right={<Link to='/login' className='Link Link_underline'>Login</Link>}
             />

@@ -5,9 +5,16 @@
 }
 
 @media(max-width: 767px) {
+  .Home {
+    padding-top: 64px;
+    .ProductCategory {
+      padding-top: 12px;
+    }
+  }
   .Home-Category {
     padding-bottom: 16px;
     border-bottom: 1px solid $grey;
+
     .Category-Inner {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;

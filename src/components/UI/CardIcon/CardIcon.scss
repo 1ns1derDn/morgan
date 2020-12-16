@@ -1,7 +1,9 @@
+@import '../../../Variables.scss';
 .CardIcon {
   position: relative;
   &-Count {
     position: absolute;
     left: 100%;
+    color: $black;
   }
 }

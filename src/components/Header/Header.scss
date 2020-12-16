@@ -49,6 +49,7 @@
 @media(max-width: 1024px) {
   .Header {
     position: relative;
+    z-index: 100;
     &::before {
       content: '';
       position: absolute;
@@ -114,6 +115,8 @@
 
 @media(max-width: 767px) {
   .Header {
+    position: fixed;
+    width: 100%;
     &-Inner {
       height: 48px;
     }
@@ -125,6 +128,7 @@
     .Nav {
       &-Wrapper {
         top: 48px;
+        height: calc(100vh - 48px);
       }
       &-Link {
         height: 38px;

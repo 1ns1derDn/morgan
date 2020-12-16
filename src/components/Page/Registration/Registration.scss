@@ -1,6 +1,6 @@
 @import '../../../Variables.scss';
 
-.CreateAccount {
+.Registration {
   padding-top: 52px;
   &-Title {
     margin-bottom: 13px;
@@ -21,8 +21,8 @@
 }
 
 @media(max-width: 767px) {
-  .CreateAccount {
-    padding-top: 24px;
+  .Registration {
+    padding-top: 72px;
     &-Title {
       margin-bottom: 18px;
       font-size: 14px;
@@ -40,5 +40,4 @@
       margin-bottom: 15px;
     }
   }
-
 }
