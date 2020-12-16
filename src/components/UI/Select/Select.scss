@@ -42,7 +42,7 @@
     min-width: 176px;
     width: 100%;
     padding: 6px 0;
-    background: #FAFAFA;
+    background: $white;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
   }
   &-Label {
@@ -79,7 +79,7 @@
     cursor: pointer;
     transition: 0.3s;
     &:hover {
-      background-color: $lightWhite;
+      background-color: $darkGray;
     }
   }
   &.Select_Open {

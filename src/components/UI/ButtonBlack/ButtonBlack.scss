@@ -17,11 +17,15 @@
   background-color: $black;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
   &.ButtonBlack_Small {
     height: 34px;
     font-size: 12px;
     line-height: 22px;
     letter-spacing: 0.01em;
+  }
+  &:hover {
+    background-color: #424242;
   }
 }
 

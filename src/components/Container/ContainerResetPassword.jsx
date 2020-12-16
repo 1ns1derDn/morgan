@@ -31,8 +31,3 @@ const ContainerResetPassword = () => {
 }
 
 export default ContainerResetPassword
-
-// import LinkSend from '../UI/LinkSend/LinkSend'
-// if (true) {
-//   return <LinkSend email='yourmail398@gmail.com' /> 
-// }

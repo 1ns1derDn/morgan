@@ -6,7 +6,8 @@ import WithSocial from '../../UI/WithSocial/WithSocial'
 import Title from '../../UI/Title/Title'
 import RowContainer from '../../helpers/RowContainer/RowContainer'
 
-import icEye from './icon/ic-eye.svg'
+import eyeHidden from './icon/eyeHidden.svg'
+import eyeVisible from './icon/eyeVisible.svg'
 
 import './Login.scss'
 
@@ -44,6 +45,7 @@ const Login = (props) => {
               touched={email.touched}
             />
             <Input
+              clazz='Login-InputPassword'
               title='Password'
               placeholder='Enter your password'
               type={password.type}
@@ -64,7 +66,7 @@ const Login = (props) => {
                   className='Input-Button'
                   onMouseDown={handleCheckPassword}
                   onMouseUp={handleCheckPassword}>
-                  <img src={icEye} alt='eye' />
+                  <img src={password.type === 'password' ? eyeHidden : eyeVisible} alt='eye' />
                 </span>
               )}
             />

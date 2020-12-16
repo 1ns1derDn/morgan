@@ -15,7 +15,7 @@
     font-size: 12px;
     line-height: 22px;
     letter-spacing: 0.01em;
-    color: $DarkGray;
+    color: $grey;
   }
   &-List {
     max-height: 150px;
@@ -30,23 +30,11 @@
       margin-top: 10px;
     }
   }
-  &-ItemName {
-
-  }
-  &-ItemPrice {
-
-  }
   &-Express {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 18px;
-  }
-  &-ExpressName {
-
-  }
-  &-ExpressPrice {
-
   }
   &-Box {
     display: flex;
@@ -55,13 +43,7 @@
     padding: 16px 0;
     border-top: 1px solid $grey;
   }
-  &-TitleTotal {
-
-  }
   &-Total {
-
-  }
-  &-Button {
-
+    font-weight: 500;
   }
 }
