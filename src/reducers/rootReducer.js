@@ -6,7 +6,7 @@ import basketRedurer from './basketRedurer'
 import formReducer from './formReducer'
 import menuReducer from './menuReducer'
 import arrowReducer from './arrowReducer'
-
+import sendNewPasswordReducer from './sendNewPasswordReducer'
 
 const rootReducer = combineReducers({
   products: productsReducer,
@@ -15,7 +15,8 @@ const rootReducer = combineReducers({
   basket: basketRedurer,
   form: formReducer,
   menu: menuReducer,
-  arrows: arrowReducer
+  arrows: arrowReducer,
+  sendPassword: sendNewPasswordReducer
 })
 
 export default rootReducer

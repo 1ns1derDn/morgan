@@ -37,6 +37,12 @@
     color: $grey;
     margin-bottom: 9px;
   }
+  &-RemoveAll {
+    transition: 0.3s;
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
   &-Bottom {
     display: flex;
     justify-content: space-between;
@@ -58,9 +64,10 @@
     width: 33px;
     height: 33px;
     margin: 0 8px;
-    border: 1px solid $grey;
+    border: 1px solid $darkGray;
   }
   &-Price {
+    display: flex;
     align-self: flex-end;
     font-weight: 500;
     font-size: 16px;
@@ -69,7 +76,7 @@
   }
   &-PriceQuantity {
     display: none;
-    color: $darkGray;
+    color: $grey;
   }
   &.BasketProduct_CardProduct {
     max-width: 248px;

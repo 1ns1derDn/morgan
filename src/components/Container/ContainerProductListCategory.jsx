@@ -79,6 +79,13 @@ const ContainerProductListCategory = ({ getProducts }) => {
     }
   }, [handleSwitchArrowsOpposite])
 
+  useEffect(() => {
+    if(products.paginationCount === 12) {
+      return
+    }
+    setTimeout(() => {window.scrollTo(0, window.pageYOffset + 1000)}, 0)
+  }, [products.paginationCount])
+
   return <ProductListCategory
     arrowUp={arrowUp}
     products={products}

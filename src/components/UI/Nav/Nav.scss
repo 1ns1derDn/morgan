@@ -1,5 +1,4 @@
 @import '../../../Variables.scss';
-
 .Nav {
   &-Title {
     display: none;
@@ -21,7 +20,7 @@
     min-width: 131px;
     height: 64px;
     padding: 0 16px;
-    color: $grey;
+    color: $black;
     @include hoverHeaderItem;
     &.Nav-Link_Active {
       &::before {

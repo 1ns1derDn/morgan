@@ -18,6 +18,9 @@
     max-width: 100%;
     .Product-Image {
       width: 100%;
+      img {
+        width: 367px;
+      }
     }
   }
 }
@@ -60,7 +63,7 @@
     .Product-Image {
       height: 218px;
       img {
-        width: 215px;
+        width: 288px;
       }
     }
     .Product-Box {
@@ -74,7 +77,7 @@
     .Product-Image {
       height: 185px;
       img {
-        width: 180px;
+        width: 254px;
       }
     }
   }
@@ -85,7 +88,7 @@
     .Product-Image {
       height: 150px;
       img {
-        width: 150px;
+        width: 200px;
       }
     }
   }

@@ -8,12 +8,16 @@ import {
   checkPassword,
   handleSubmitResetPassword
 } from '../../actions/formActions'
+import { setEmial, openVisibleSendPassword } from '../../actions/sendNewPasswordActions'
 import ResetPassword from '../Page/ResetPassword/ResetPassword'
+import LinkSend from '../UI/LinkSend/LinkSend'
 
 const ContainerResetPassword = () => {
   const dispatch = useDispatch()
 
   const form = useSelector((state) => state.form)
+  const email = useSelector((state) => state.sendPassword.email)
+  const sendLinkVisible = useSelector((state) => state.sendPassword.visible)
 
   const mapDispatchToProps = (dispatch) => ({
     handleChange: (e) => dispatch(handleChange(e)),
@@ -24,8 +28,12 @@ const ContainerResetPassword = () => {
       dispatch(isValidate(e.target))
       dispatch(handleBlur(e))
     },
-    handleSubmit: handleSubmitResetPassword(dispatch)(form)
+    handleSubmit: handleSubmitResetPassword(dispatch, setEmial, openVisibleSendPassword)(form)
   })
+
+  if(sendLinkVisible) {
+    return <LinkSend email={email} />
+  }
 
   return <ResetPassword {...mapDispatchToProps(dispatch)} {...form} />
 }

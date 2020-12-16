@@ -14,6 +14,19 @@
   color: $black;
   border: none;
   background-color: transparent;
+  &:hover {
+    .ArrowScroll {
+      &-Icon {
+        transform: translateY(20px);
+      }
+      &-Title { 
+        transform: translateY(20px);
+      }
+    }
+  }
+  &-Icon {
+    transition: 0.3s;
+  }
   cursor: pointer;
   &-Icon {
     width: 44px;
@@ -21,8 +34,19 @@
   }
   &-Title {
     writing-mode: vertical-lr;
+    transition: 0.3s;
   }
   &.ArrowScroll_Reverse {
+    &:hover {
+      .ArrowScroll {
+        &-Icon {
+          transform: translateY(-20px);
+        }
+        &-Title { 
+          transform: translateY(-20px);
+        }
+      }
+    }
     flex-direction: column;
     .ArrowScroll-Icon {
       margin-top: 0;

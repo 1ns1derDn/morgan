@@ -8,7 +8,7 @@ const initialState = {
   expressdeliveryPrice: 10
 }
 
-const orderTotolReduce = (basketProducts, price, count = 1, expressdeliveryPrice = 10) => {
+const orderTotolReduce = (basketProducts, price, expressdeliveryPrice = 10, count = 1,) => {
   let orderTotle = basketProducts.reduce((orderTotle, product) => {
     return orderTotle + Number(product.totle)
   }, 0)
@@ -45,7 +45,7 @@ const basketRedurer = (state = initialState, action) => {
       }
 
     case 'ADD_PRODUCT_TO_BASKET':
-      const orderTotle = orderTotolReduce(state.basketProducts, action.payload.price)
+      const orderTotle = orderTotolReduce(state.basketProducts, action.payload.price, state.expressdeliveryPrice)
       if (action.payload.isBasket) {
         const productIndex = state.basketProducts.findIndex(({ id }) => id === action.payload.id)
         const count = state.basketProducts[productIndex].count + 1
@@ -70,7 +70,7 @@ const basketRedurer = (state = initialState, action) => {
 
     case 'REMOVE_PRODUCT_FROM_BASKET': {
       const productIndex = state.basketProducts.findIndex(({ id }) => id === action.payload.id)
-      const orderTotle = orderTotolReduce(state.basketProducts, -action.payload.price)
+      const orderTotle = orderTotolReduce(state.basketProducts, -action.payload.price, state.expressdeliveryPrice)
       const count = state.basketProducts[productIndex].count - 1
       const totle = +state.basketProducts[productIndex].price * +count
       const quantity = orderQuantityReduce(state.basketProducts, -1)
@@ -100,7 +100,7 @@ const basketRedurer = (state = initialState, action) => {
 
     case 'All_REMOVE_PRODUCT_FROM_BASKET': {
       const productIndex = state.basketProducts.findIndex(({ id }) => id === action.payload.id)
-      const orderTotle = orderTotolReduce(state.basketProducts, -action.payload.price, state.basketProducts[productIndex].count)
+      const orderTotle = orderTotolReduce(state.basketProducts, -action.payload.price, state.expressdeliveryPrice, state.basketProducts[productIndex].count)
       const quantity = orderQuantityReduce(state.basketProducts, -state.basketProducts[productIndex].count)
       return {
         ...state,

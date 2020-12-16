@@ -36,21 +36,21 @@ export const handleSubmitLogin = (dispatch) => (user) => (e) => {
   }
 }
 
-
-export const handleSubmitResetPassword  = (dispatch) => (user) => (e) => {
+export const handleSubmitResetPassword  = (dispatch, setEmial, toggleVisibleSendPassword) => (user) => (e) => {
   e.preventDefault()
   const { email } = user
   if (email.isValidate) {
-    alert('Send from!')
+    dispatch(setEmial(email.value))
+    dispatch(toggleVisibleSendPassword())
     dispatch(clearFrom())
   }
 }
-
 
 export const handleSubmitRegistration  = (dispatch) => (user) => (e) => {
   e.preventDefault()
   const { email, userFullName, password } = user
   if (email.isValidate && userFullName.isValidate && password.isValidate ) {
+
     alert('Send from!')
     dispatch(clearFrom())
   }
