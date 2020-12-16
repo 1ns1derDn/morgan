@@ -12,6 +12,7 @@ const ContainerHome = () => {
   const { getProducts } = useContext(ContextServiceProducts)
 
   const products = useSelector(state => state.products)
+  const arrowDown = useSelector(state => state.arrows.arrowDown)
   const categories = useSelector(state => state.categories.categories)
   const sortSelect = useSelector(state => state.sortSelect)
   const fnSortProducts = useCallback((type, products) => dispatch(sortProduct(type, products)), [dispatch])
@@ -22,6 +23,7 @@ const ContainerHome = () => {
   }, [sortSelect.value, fnSortProducts, products.products])
 
   return <Home
+    arrowDown={arrowDown}
     fnHandleSelectedCategory={fnHandleSelectedCategory}
     categories={categories}
     getProducts={getProducts}

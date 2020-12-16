@@ -26,6 +26,14 @@ export const setProductsVisivle = (products) => ({
   payload: products
 })
 
+export const addPaginationProducts = () => ({
+  type: 'ADD_PAGINATION_PRODUCTS',
+})
+
+export const refreshPaginationProducts = () => ({
+  type: 'REFRESH_PAGINATION_PRODUCTS'
+})
+
 export const fetchProducts = (getProducts) => () => (dispatch) => {
   getProducts()
     .then(data => {

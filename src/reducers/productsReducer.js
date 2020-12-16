@@ -1,7 +1,8 @@
 const initialState = {
   products: [],
   productsVisible: [],
-  error: false
+  paginationCount: 12,
+  error: false,
 }
 
 const productsReducer = (state = initialState, action) => {
@@ -11,6 +12,18 @@ const productsReducer = (state = initialState, action) => {
       return {
         ...state,
         productsVisible: action.payload
+      }
+
+    case 'ADD_PAGINATION_PRODUCTS':
+      return {
+        ...state,
+        paginationCount: state.paginationCount + 4
+      }
+
+    case 'REFRESH_PAGINATION_PRODUCTS':
+      return {
+        ...state,
+        paginationCount: initialState.paginationCount,
       }
 
     case 'FILTER_PRODUCTS_CATEGORIES':
@@ -42,17 +55,17 @@ const productsReducer = (state = initialState, action) => {
         case 'Newness':
           return {
             ...state,
-            productsVisible: copyProducts.sort((a, b) => new Date(b.timeStamp) - new Date(a.timeStamp)  )
+            productsVisible: copyProducts.sort((a, b) => new Date(b.timeStamp) - new Date(a.timeStamp)).slice(0, state.paginationCount)
           }
         case 'Price hight to low':
           return {
             ...state,
-            productsVisible: copyProducts.sort((a, b) => +a.price < +b.price ? 1 : -1)
+            productsVisible: copyProducts.sort((a, b) => +a.price < +b.price ? 1 : -1).slice(0, state.paginationCount)
           }
         case 'Price low to hight':
           return {
             ...state,
-            productsVisible: copyProducts.sort((a, b) => +a.price > +b.price ? 1 : -1)
+            productsVisible: copyProducts.sort((a, b) => +a.price > +b.price ? 1 : -1).slice(0, state.paginationCount)
           }
         default:
           return state

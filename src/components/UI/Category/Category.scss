@@ -1,5 +1,8 @@
 @import '../../../Variables.scss';
 .Category {
+  &-Wrapper {
+    position: relative;
+  }
   &-Inner {
     display: grid;
     grid-template-columns: 3.5fr 3.5fr 5fr;

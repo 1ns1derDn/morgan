@@ -5,6 +5,8 @@ import sortSelectReducer from './sortSelectReducer'
 import basketRedurer from './basketRedurer'
 import formReducer from './formReducer'
 import menuReducer from './menuReducer'
+import arrowReducer from './arrowReducer'
+
 
 const rootReducer = combineReducers({
   products: productsReducer,
@@ -12,7 +14,8 @@ const rootReducer = combineReducers({
   sortSelect: sortSelectReducer,
   basket: basketRedurer,
   form: formReducer,
-  menu: menuReducer
+  menu: menuReducer,
+  arrows: arrowReducer
 })
 
 export default rootReducer

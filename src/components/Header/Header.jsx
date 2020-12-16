@@ -14,7 +14,7 @@ const Header = (props) => {
   }
 
   return (
-    <header className={classes}>
+    <header className={classes} id='Header'>
       <div className='Container'>
         <div className='Header-Inner'>
           <Logo

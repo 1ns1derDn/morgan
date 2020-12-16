@@ -1,0 +1,49 @@
+@import '../../../Variables.scss';
+.ArrowScroll {
+  position: absolute;
+  right: -91px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $black;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  &-Icon {
+    width: 44px;
+    margin-top: 8px;
+  }
+  &-Title {
+    writing-mode: vertical-lr;
+  }
+  &.ArrowScroll_Reverse {
+    flex-direction: column;
+    .ArrowScroll-Icon {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+  }
+  &.ArrowScroll_Disable {
+    display: none;
+  }
+  &.ArrowScroll_Visible {
+    display: flex;
+  }
+}
+
+@media(max-width: 1365px) {
+  .ArrowScroll {
+    &.ArrowScroll_Disable {
+      display: none;
+    }
+    &.ArrowScroll_Visible {
+      display: none;
+    }
+  }
+}

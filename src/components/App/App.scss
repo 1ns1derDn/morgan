@@ -4,6 +4,7 @@
 html,
 body {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 #root {
@@ -54,7 +55,13 @@ a {
   max-width: 1166px;
   padding: 0 15px;
   margin: 0 auto;
+  &.Container_Position {
+    position: relative;
+    width: 100%;
+  }
 }
+
+
 
 .ContainerForm {
   max-width: 367px;

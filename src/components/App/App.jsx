@@ -29,24 +29,32 @@ const App = () => {
           <ContainerHome />
         </Route>
         <Route path="/interior-ceiling" exact>
-          <ContainerProductListCategory
-            getProducts={getProductsTableLamps}
-          />
+          <div className="Container">
+            <ContainerProductListCategory
+              getProducts={getProductsTableLamps}
+            />
+          </div>
         </Route>
         <Route path="/floor-lamps">
-          <ContainerProductListCategory
-            getProducts={getProductsFloorLamps}
-          />
+          <div className="Container">
+            <ContainerProductListCategory
+              getProducts={getProductsFloorLamps}
+            />
+          </div>
         </Route>
         <Route path="/exterior-ceiling">
-          <ContainerProductListCategory
-            getProducts={getProductsExteriorCeiling}
-          />
+          <div className="Container">
+            <ContainerProductListCategory
+              getProducts={getProductsExteriorCeiling}
+            />
+          </div>
         </Route>
         <Route path="/table-lamps">
-          <ContainerProductListCategory
-            getProducts={getProductsInteriorCeiling}
-          />
+          <div className="Container">
+            <ContainerProductListCategory
+              getProducts={getProductsInteriorCeiling}
+            />
+          </div>
         </Route>
         <Route path="/login">
           <ContainerLogin />

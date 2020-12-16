@@ -8,14 +8,14 @@ const Home = (props) => (
     <div className='Container'>
       <div className='Home-Inner'>
         <Category
+          arrowDown={props.arrowDown}
           clazz='Home-Category'
           fnHandleSelectedCategory={props.fnHandleSelectedCategory}
           categories={props.categories} />
       </div>
-    </div>
-    <ContainerProductListCategory
-
+      <ContainerProductListCategory
       getProducts={props.getProducts} />
+    </div>
   </div>
 )
 

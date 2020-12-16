@@ -1,5 +1,21 @@
 .ProductCategory {
+  position: relative;
   padding-top: 32px;
+  &-ButtonWhite {
+    margin: 0 auto;
+    font-weight: 500;
+  }
+  &-Box {
+    position: fixed;
+    bottom: 50px;
+    z-index: 1;
+    left: 0;
+    right: 0;
+  }
+  &-Arrow {
+    z-index: 10;
+    right: -76px;
+  }
 }
 
 @media(max-width: 767px) {
