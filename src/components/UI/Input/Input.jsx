@@ -12,7 +12,7 @@ const Input = (props) => {
   if (!props.validate && props.touched) {
     classes.push('Input_ErrorMessage')
   }
-
+  
   return (
     <div className={classes.join(' ')} htmlFor={props.id}>
       <div className='Input-Top'>
@@ -33,7 +33,7 @@ const Input = (props) => {
           required={props.required}
         />
         {
-          props.renderButton ? props.renderButton() : null
+          props.value !== '' && props.renderButton ? props.renderButton() : null
         }
       </div>
       <span className='Input-Error'>{!props.validate && props.touched ? props.errorMessage : ''}</span>

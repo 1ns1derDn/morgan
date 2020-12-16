@@ -4,14 +4,15 @@ const initialState = {
   quantity: 0,
   timeStamp: null,
   id: null,
-  orderSuccess: false
+  orderSuccess: false,
+  expressdeliveryPrice: 10
 }
 
-const orderTotolReduce = (basketProducts, price, count = 1) => {
+const orderTotolReduce = (basketProducts, price, count = 1, expressdeliveryPrice = 10) => {
   let orderTotle = basketProducts.reduce((orderTotle, product) => {
     return orderTotle + Number(product.totle)
   }, 0)
-  return orderTotle + Number(price) * count
+  return orderTotle + Number(price) * count + expressdeliveryPrice
 }
 
 const orderQuantityReduce = (basketProducts, count = 1) => {
@@ -34,7 +35,7 @@ const basketRedurer = (state = initialState, action) => {
         ...state,
         orderSuccess: false
       }
-    
+
     case 'SEND_ORDER_PROCESS':
       return {
         ...initialState,

@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom'
 import ContainerHeader from '../Container/ContainerHeader'
 import ContainerHome from '../Container/ContainerHome'
 import ContainerLogin from '../Container/ContainerLogin'
-import Registration from '../Page/Registration/Registration'
-import ContainerResetPassword from '../Page/ResetPassword/ResetPassword'
+import ContainerRegistration from '../Container/ContainerRegistration'
+import ContainerResetPassword from '../Container/ContainerResetPassword'
 import ContainerBasket from '../Container/ContainerBasket'
 import NotFound from '../Page/NotFound/NotFound'
 
@@ -63,7 +63,7 @@ const App = () => {
           <ContainerBasket />
         </Route>
         <Route path="/registration">
-          <Registration />
+          <ContainerRegistration />
         </Route>
         <Route path="/reset-password">
           <ContainerResetPassword />

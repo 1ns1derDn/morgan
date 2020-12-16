@@ -1,3 +1,4 @@
+@import '../../../Variables.scss';
 .PreviewBasket {
   display: flex;
   flex-direction: column;
@@ -6,7 +7,7 @@
   height: 254px;
   padding: 12px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
-  background-color: #fafafa;
+  background-color: $white;
   &-Product {
     & + .PreviewBasket-Product {
       margin-top: 5px;

@@ -77,6 +77,10 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-color: $lightWhite;
+    }
   }
   &.Select_Open {
     .Select-HeadSelect {

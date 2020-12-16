@@ -3,30 +3,35 @@
 .Product {
   position: relative;
   max-width: 272px;
-  background: #F0F0F0;
+  background: $lightWhite;
   &-Button {
     position: absolute;
     top: 12px;
     right: 12px;
     z-index: 1;
+    transition: 0.5s;
+    &:hover {
+      transform: rotate(360deg);
+    }
   }
   &-Image {
     position: relative;
     width: 272px;
     height: 284px;
     overflow: hidden;
-    background: #F0F0F0;
+    background: $lightWhite;
     img {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate3d(-50%, -50%, 0);
+      transition: 0.5s;
     }
   }
   &-Box {
     display: flex;
     flex-direction: column;
-    background: #F0F0F0;
+    background: $lightWhite;
     padding: 16px;
   }
   &-Name {

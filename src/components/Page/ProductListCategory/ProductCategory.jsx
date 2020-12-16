@@ -28,7 +28,7 @@ const ProductCategory = (props) => {
       {isPaginationVisible ? <ButtonWhite clazz='ProductCategory-ButtonWhite' onClick={props.handleAddPaginationProducts} title='Show more' /> : null}
       <div className='ProductCategory-Box'>
         <div className="Container Container_Position">
-          <ArrowScroll visible={props.arrowUp} clazz='ProductCategory-Arrow' id='#Header' title='Scroll' reverse />
+          <ArrowScroll visible={props.arrowUp} clazz='ProductCategory-Arrow' id='#Header' title='Top' reverse />
         </div>
       </div>
     </div>

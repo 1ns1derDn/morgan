@@ -6,11 +6,11 @@ import {
   handleFocus,
   isValidate,
   checkPassword,
-  handleSubmitLogin
+  handleSubmitResetPassword
 } from '../../actions/formActions'
-import Login from '../Page/Login/Login'
+import ResetPassword from '../Page/ResetPassword/ResetPassword'
 
-const ContainerLogin = () => {
+const ContainerResetPassword = () => {
   const dispatch = useDispatch()
 
   const form = useSelector((state) => state.form)
@@ -19,14 +19,20 @@ const ContainerLogin = () => {
     handleChange: (e) => dispatch(handleChange(e)),
     handleFocus: (e) => dispatch(handleFocus(e)),
     handleCheckPassword: (e) => dispatch(checkPassword(e)),
+
     handleBlur: (e) => {
       dispatch(isValidate(e.target))
       dispatch(handleBlur(e))
     },
-    handleSubmit: handleSubmitLogin(dispatch)(form)
+    handleSubmit: handleSubmitResetPassword(dispatch)(form)
   })
 
-  return <Login {...form} {...mapDispatchToProps(dispatch)} />
+  return <ResetPassword {...mapDispatchToProps(dispatch)} {...form} />
 }
 
-export default ContainerLogin
+export default ContainerResetPassword
+
+// import LinkSend from '../UI/LinkSend/LinkSend'
+// if (true) {
+//   return <LinkSend email='yourmail398@gmail.com' /> 
+// }

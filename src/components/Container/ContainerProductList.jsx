@@ -8,8 +8,10 @@ import ProductList from '../UI/ProductList/ProductList'
 
 const ContainerProductList = (props) => {
   const dispatch = useDispatch()
+
   const products = useSelector(state => state.products.productsVisible)
   const basketProducts = useSelector(state => state.basket.basketProducts)
+  
   const handleAddProductToBasket = (product, isBasket) => dispatch(addProductToBasket(product, isBasket))
   const handleAllRemoveProductFromBasket = (products) => dispatch(allRemoveProductFromBasket(products))
 

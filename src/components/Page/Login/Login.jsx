@@ -10,55 +10,78 @@ import icEye from './icon/ic-eye.svg'
 
 import './Login.scss'
 
-const Login = (props) => (
-  <section className='Login'>
-    <div className='Container'>
-      <div className='Login-Inner'>
-        <form className='Login-Form'>
-          <Title clazz='Login-Title' title='LOGIN' />
-          <Input
-            title='Email'
-            value={props.email.value}
-            handleBlur={props.handleBlur}
-            handleFocus={props.handleFocus}
-            handleChenge={props.handleChange}
-            placeholder='Enter your email'
-            id='email'
-            type={props.email.type}
-            name='email'
-            required={true}
-            validate={props.email.isValidate}
-            errorMessage={props.email.errorMessage}
-            touched={props.email.touched}
-          />
-          <Input
-            title='Password'
-            clazz='Input_ErrorMessage'
-            placeholder='Enter your password'
-            type='password'
-            required
-            touched
-            validate
-            renderLink={() => (
-              <Link to='/reset-password' className='Input-Link'>Forgotten your password?</Link>
-            )}
-            renderButton={() => (
-              <button className='Input-Button'>
-                <img src={icEye} alt='eye' />
-              </button>
-            )}
-          />
-          <ButtonBlack clazz='Login-Button' title='log in' />
-          <RowContainer
-            classes='Login-RowContainer'
-            left={<Link to='/' className='Link'>Don't have an account?</Link>}
-            right={<Link to='/registration' className='Link Link_underline'>Create an account</Link>}
-          />
-          <WithSocial />
-        </form>
+const Login = (props) => {
+
+  const {
+    handleBlur,
+    handleFocus,
+    handleChange,
+    handleCheckPassword,
+    handleSubmit,
+    email,
+    password,
+  } = props
+
+
+  return (
+    <section className='Login'>
+      <div className='Container'>
+        <div className='Login-Inner'>
+          <form className='Login-Form' onSubmit={(e) => handleSubmit(e)}>
+            <Title clazz='Login-Title' title='LOGIN' />
+            <Input
+              title='Email'
+              value={email.value}
+              handleBlur={handleBlur}
+              handleFocus={handleFocus}
+              handleChenge={handleChange}
+              placeholder='Enter your email'
+              type={email.type}
+              name={email.name}
+              required={true}
+              validate={email.isValidate}
+              errorMessage={email.errorMessage}
+              touched={email.touched}
+            />
+            <Input
+              title='Password'
+              placeholder='Enter your password'
+              type={password.type}
+              required
+              name={password.name}
+              value={password.value}
+              handleBlur={handleBlur}
+              handleFocus={handleFocus}
+              handleChenge={handleChange}
+              validate={password.isValidate}
+              errorMessage={password.errorMessage}
+              touched={password.touched}
+              renderLink={() => (
+                <Link to='/reset-password' className='Input-Link'>Forgotten your password?</Link>
+              )}
+              renderButton={() => (
+                <span
+                  className='Input-Button'
+                  onMouseDown={handleCheckPassword}
+                  onMouseUp={handleCheckPassword}>
+                  <img src={icEye} alt='eye' />
+                </span>
+              )}
+            />
+            <ButtonBlack clazz='Login-Button' title='log in' />
+            <RowContainer
+              classes='Login-RowContainer'
+              left={<Link to='/' className='Link'>Don't have an account?</Link>}
+              right={<Link to='/registration' className='Link Link_underline'>Create an account</Link>}
+            />
+            <WithSocial />
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}
+
+
 
 export default Login

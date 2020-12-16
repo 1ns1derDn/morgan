@@ -3,16 +3,15 @@ import { Link } from 'react-router-dom'
 import Title from '../../UI/Title/Title'
 import Input from '../../UI/Input/Input'
 import ButtonBlack from '../../UI/ButtonBlack/ButtonBlack'
-import LinkSend from '../../UI/LinkSend/LinkSend'
 import RowContainer from '../../helpers/RowContainer/RowContainer'
 
 import './ResetPassword.scss'
 
-const ResetPassword = () => (
+const ResetPassword = (props) => (
   <section className='ResetPassword'>
     <div className='Container'>
       <div className='ResetPassword-Inner'>
-        <form className='ContainerForm'>
+        <form className='ContainerForm' onSubmit={props.handleSubmit}>
           <Title clazz='ResetPassword-Title' title='RESET YOUR PASSWORD' />
           <div className='ResetPassword-Text'>
             <p >
@@ -24,12 +23,17 @@ const ResetPassword = () => (
           </div>
           <Input
             title='Email'
-            clazz='Input_ErrorMessage ResetPassword-Input'
+            value={props.email.value}
+            handleBlur={props.handleBlur}
+            handleFocus={props.handleFocus}
+            handleChenge={props.handleChange}
             placeholder='Enter your email'
-            type="email"
-            required
-            touched
-            validate
+            type={props.email.type}
+            name={props.email.name}
+            required={true}
+            validate={props.email.isValidate}
+            errorMessage={props.email.errorMessage}
+            touched={props.email.touched}
           />
           <ButtonBlack clazz='ResetPassword-Button' title='SEND A PASSWORD RESET LINK' />
           <RowContainer
@@ -42,13 +46,4 @@ const ResetPassword = () => (
   </section>
 )
 
-const ContainerResetPassword = () => {
-
-  if (true) {
-    return <LinkSend email='yourmail398@gmail.com' /> 
-  }
-
-  return <ResetPassword />
-}
-
-export default ContainerResetPassword
+export default ResetPassword

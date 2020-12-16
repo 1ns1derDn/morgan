@@ -6,11 +6,11 @@ import {
   handleFocus,
   isValidate,
   checkPassword,
-  handleSubmitLogin
+  handleSubmitRegistration
 } from '../../actions/formActions'
-import Login from '../Page/Login/Login'
+import Registration from '../Page/Registration/Registration'
 
-const ContainerLogin = () => {
+const ContainerRegistration = () => {
   const dispatch = useDispatch()
 
   const form = useSelector((state) => state.form)
@@ -23,10 +23,10 @@ const ContainerLogin = () => {
       dispatch(isValidate(e.target))
       dispatch(handleBlur(e))
     },
-    handleSubmit: handleSubmitLogin(dispatch)(form)
+    handleSubmit: handleSubmitRegistration(dispatch)(form)
   })
 
-  return <Login {...form} {...mapDispatchToProps(dispatch)} />
+  return <Registration {...mapDispatchToProps(dispatch)} {...form} />
 }
 
-export default ContainerLogin
+export default ContainerRegistration
