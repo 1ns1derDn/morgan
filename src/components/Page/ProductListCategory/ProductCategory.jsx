@@ -27,7 +27,10 @@ const ProductCategory = (props) => {
         products={props.products} />
       {isPaginationVisible ? <ButtonWhite
         clazz='ProductCategory-ButtonWhite'
-        onClick={props.handleAddPaginationProducts}
+        onClick={() => {
+          props.handleAddPaginationProducts()
+          setTimeout(() => { window.scrollTo(0, window.pageYOffset + 1000) }, 0)
+        }}
         title='Show more' /> : null}
       <div className='ProductCategory-Box'>
         <div className="Container Container_Position">

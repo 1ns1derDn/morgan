@@ -44,7 +44,10 @@ const ContainerProductListCategory = ({ getProducts }) => {
     fnFetchProducts()
     fnOrderProcessRefresh()
     fnRefreshPaginationProducts()
-  }, [fnFetchCategories, fnFetchProducts, fnOrderProcessRefresh, fnRefreshPaginationProducts])
+  }, [
+    fnFetchCategories, fnFetchProducts,
+    fnOrderProcessRefresh,
+    fnRefreshPaginationProducts])
 
   useEffect(() => {
     fnSortProducts(sortSelect.value, products.products)
@@ -78,13 +81,6 @@ const ContainerProductListCategory = ({ getProducts }) => {
       }
     }
   }, [handleSwitchArrowsOpposite])
-
-  useEffect(() => {
-    if(products.paginationCount === 12) {
-      return
-    }
-    setTimeout(() => {window.scrollTo(0, window.pageYOffset + 1000)}, 0)
-  }, [products.paginationCount])
 
   return <ProductListCategory
     arrowUp={arrowUp}
