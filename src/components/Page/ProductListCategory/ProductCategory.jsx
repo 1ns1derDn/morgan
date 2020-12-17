@@ -29,7 +29,7 @@ const ProductCategory = (props) => {
         clazz='ProductCategory-ButtonWhite'
         onClick={() => {
           props.handleAddPaginationProducts()
-          setTimeout(() => { window.scrollTo(0, window.pageYOffset + 1000) }, 0)
+          setTimeout(() => { window.scrollTo(0, window.pageYOffset + window.innerHeight) }, 0)
         }}
         title='Show more' /> : null}
       <div className='ProductCategory-Box'>
